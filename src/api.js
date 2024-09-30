@@ -7,6 +7,4 @@ export const fetchData = (async(URL) => {
     }catch(error){
         console.error('Error in fetch:',error)
     }
-    
-
 })
