@@ -1,6 +1,6 @@
-import React from "react";
+import React,{ useEffect } from "react";
 // import RecipeCard from "../RecipeCard/RecipeCard";
-import { useEffect } from "react";
+import { fetchData } from "../../api.js"; 
 
 function CardContainer() {
     useEffect(() => {
@@ -17,9 +17,10 @@ function CardContainer() {
         loadCategories();
     }, []);
     return <div className ="card-container">
-        {categories.map((category,index) => (<div key ={index} className="category-card">
+        {/* {categories.map((category,index) => (<div key ={index} className="category-card">
             <h2>{category.name}</h2>
-        </div>))}
+        </div>))} */}
+        <h1>this is container</h1>
         
     </div>
 }
