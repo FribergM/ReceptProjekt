@@ -1,0 +1,16 @@
+.card-container{
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+}
+.category-section{
+    margin: 1rem;
+    padding: 1rem;
+}
+.category-section h2 {
+    margin-top: 0;
+}
+.recipe-cards{
+    display: flex;
+    gap: 2vw;
+}

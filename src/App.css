@@ -1,0 +1,12 @@
+.home-page{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* TEMP HEADER */
+.header-img{
+    width: 100vw;
+    height: 30vh;
+    object-fit: cover;
+}
