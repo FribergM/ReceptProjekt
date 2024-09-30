@@ -11,7 +11,7 @@ function Search() {
         <input type="text" placeholder ="Search..." value={query} onChange={(e)=>{
             setQuery(e.target.value)
         }}/>
-        <button onClick = {handleSearch}>Search</button>
+        <button className = "search-button" onClick = {handleSearch}>Search</button>
         
     </div>
 }

@@ -11,7 +11,7 @@ function Category({categories}) {
     return (
         <div className="category-nav">
             <button className="category-button" onClick={handleToggleCategories}>
-                {showCategories ? "Hide Categories" : "Show Categories"}
+                {showCategories ? "Hide" : "Categories"}
             </button>
             {showCategories && (
                 <ul className="categori-list">

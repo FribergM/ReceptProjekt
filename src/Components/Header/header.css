@@ -1,12 +1,12 @@
 .header {
-    background-image: url('../image/headimg2.jpeg');
+    background-image: url('../../image/headerimg2.jpeg');
     background-size:cover;
     background-position: center;
-    height: 300px; /* 设置高度 */
-    display: flex; /* 使用 Flexbox */
-    align-items: center; /* 垂直居中 */
-    justify-content: start; /* 水平居中 */
-    text-align: center; /* 文字居中 */
+    height: 500px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
     width: 100vw;
     margin: 0;
     padding: 0;
@@ -15,7 +15,9 @@
 
 
 .header__name {
-    font-size: 50px; /* 字体大小 */
-    color: white;
-    margin: 0; /* 清除默认外边距 */
+    font-size: 100px; 
+    font-family: 'Great Vibes',cursive;
+    font-style: 'italic';
+    color: #808000;
+    margin: 0; 
 }
