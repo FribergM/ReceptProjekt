@@ -1,10 +1,11 @@
-
-
 input[type="text"] {
     width:  250px;
     padding: 5px;
 }
 
-
-
-
+.navbar{
+    box-sizing: border-box;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 1rem;
+}
