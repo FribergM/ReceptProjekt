@@ -1,9 +1,9 @@
 import React from "react";
 
-import NavBar from '../navigation/Navbar';
-import Header from '../common/Header';
-import Footer from '../common/Footer';
-import CardContainer from "../CardContainer";
+import NavBar from '../Navbar/Navbar';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
+import CardContainer from "../CardContainer/CardContainer";
 
 function StartPage() {
     return  <div>
