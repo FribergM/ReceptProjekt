@@ -41,9 +41,9 @@
 
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import StartPage from "../src/components/pages/StartPage";
-import CategoryPage from "../src/components/pages/CategoriPage";
-import RecipesPage from "../src/components/pages/RecipesPage";
+import StartPage from "./components/pages/StartPage";
+import CategoryPage from "./components/pages/CategoriPage";
+import RecipesPage from "./components/pages/RecipesPage";
 
 
 
