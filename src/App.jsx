@@ -28,7 +28,7 @@ function App() {
      <Router>
       <Routes>
         <Route path="/" element ={<StartPage recipes={recipes} categories={categories}/>} />
-        <Route path="/category/:category" element ={<CategoryPage />} />
+        <Route path="/categories/:category" element ={<CategoryPage recipes={recipes} />} />
         <Route path="/recipe/:recipeId" element ={<RecipesPage />} />
       </Routes>
      </Router>

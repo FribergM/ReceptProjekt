@@ -3,7 +3,7 @@ import RecipeCard from '../RecipeCard/RecipeCard'
 import './CardContainer.css';
 
 const CardContainer = ({recipes, categories}) => {
-
+    
     const getRecipesByCategory = (category) => {
         return recipes.filter(recipe => recipe.categories.includes(category));
     }

@@ -1,0 +1,34 @@
+.footer {
+    background-color: #f8f8f8; /* 浅灰色背景 */
+    padding: 20px 0; /* 上下内边距 */
+    text-align: center; /* 中心对齐 */
+    position: relative; /* 相对定位，允许内容按顺序排列 */
+}
+
+.footer-content {
+    max-width: 1200px; /* 最大宽度 */
+    margin: 0 auto; /* 中心对齐 */
+    padding: 0 20px; /* 左右内边距 */
+}
+
+.footer p {
+    margin: 10px 0; /* 上下外边距 */
+    color: #333; /* 深灰色字体 */
+}
+
+.footer-links,
+.footer-social {
+    margin: 10px 0; /* 上下外边距 */
+}
+
+.footer-links a,
+.footer-social a {
+    margin: 0 10px; /* 左右外边距 */
+    text-decoration: none; /* 无下划线 */
+    color: #007BFF; /* 链接颜色 */
+}
+
+.footer-links a:hover,
+.footer-social a:hover {
+    text-decoration: underline; /* 悬停时添加下划线 */
+}
