@@ -13,8 +13,8 @@ function App() {
   const [categories, setCategories] = useState([])
 
   const fetchAllData = async () =>{
-    const fetchedRecipes = await fetchData(import.meta.env.VITE_API_URL)
-    const fetchedCategories = await fetchData(import.meta.env.VITE_CATEGORY_URL)
+    const fetchedRecipes = await fetchData(import.meta.env.VITE_API_URL+"/recipes")
+    const fetchedCategories = await fetchData(import.meta.env.VITE_API_URL+"/categories")
     setRecipes(fetchedRecipes)
     setCategories(fetchedCategories)
   }
