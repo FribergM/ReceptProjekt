@@ -2,6 +2,7 @@ import React from "react";
 import "./header.css";
 
 function Header() {
+    console.log('rendering header');
     return(
         <div>
            <header className = "header">
