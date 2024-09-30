@@ -29,10 +29,10 @@ const CardContainer = ({recipes, categories}) => {
 
     return (
         <div className='card-container'>
-            {categories.map(category => {
+            {categories.map((category, index) => {
                 const recipesOfCategory = getRecipesByCategory(category.name);
                 return (
-                    <div key={category.name} className='category-section'>
+                    <div key={index} className='category-section'>
                         <h2>{category.name}</h2>
                         <div className='recipe-cards'>
                             {addRecipeCards(recipesOfCategory)}
