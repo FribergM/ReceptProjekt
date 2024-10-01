@@ -6,10 +6,7 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 
 function CategoriPage({recipes,categories}) {
-    //console.log("recipes,", recipes)
     const {category} = useParams();
-    //console.log("current from URL:", category);
-    //console.log("recipes:", recipes)
     
     const filteredRecipes = recipes.filter(recipe => recipe.categories.includes(category));
     //console.log("filted recipes:",filteredRecipes)
