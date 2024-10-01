@@ -13,6 +13,7 @@ const CardContainer = ({recipes, categories}) => {
             return (
                 <RecipeCard
                 key={recipe._id}
+                id={recipe._id}
                 image={recipe.imageUrl}
                 name={recipe.title}
                 description={recipe.description}
