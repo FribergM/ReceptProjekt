@@ -1,7 +1,6 @@
-/* .card-container{
+.category-wrapper{
     display: flex;
     flex-direction: column;
-    width: 80vw;
 }
 .category-section{
     margin: 1rem;
@@ -9,8 +8,4 @@
 }
 .category-section h2 {
     margin-top: 0;
-} */
-.card-container{
-    display: flex;
-    gap: 2vw;
 }
