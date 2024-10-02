@@ -9,3 +9,10 @@
 .category-section h2 {
     margin-top: 0;
 }
+.section-header{
+    display: flex;
+    justify-content: space-between;
+}
+.section-header h2 {
+    color:black;
+}

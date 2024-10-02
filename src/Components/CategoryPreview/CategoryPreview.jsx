@@ -1,6 +1,7 @@
 import React from 'react'
 import './CategoryPreview.css';
 import CardContainer from '../CardContainer/CardContainer';
+import { Link } from "react-router-dom";
 
 const CategoryPreview = ({recipes, categories}) => {
 
@@ -14,7 +15,11 @@ const CategoryPreview = ({recipes, categories}) => {
                 const recipesOfCategory = getRecipesByCategory(category.name);
                 return (
                     <div key={index} className='category-section'>
-                        <h2>{category.name}</h2>
+                        <div className='section-header'>
+                            <Link to={`/categories/${category.name}`}><h2>{category.name}</h2></Link>
+                            <Link to={`/categories/${category.name}`}><button>Se mer</button></Link>
+                        </div>
+                        
                         <CardContainer recipes={recipesOfCategory.slice(0,4)}/>
                     </div>
                 );
