@@ -3,7 +3,6 @@ import SearchedRecipes from "./SearchedRecipes";
 
 
 function Search(allRecipes) {
-    console.log("search",allRecipes)
     const[query, setQuery] = useState("");
     const handleSearch = () =>{
         console.log("Search for: ",query)
@@ -13,7 +12,7 @@ function Search(allRecipes) {
             setQuery(e.target.value)
         }}/>
         <button className = "search-button" onClick = {handleSearch}>Search</button>
-        {/* {query && (<SearchedRecipes recipes ={allRecipes} query={query} />)} */}
+        {query && (<SearchedRecipes recipes ={allRecipes} query={query} />)}
     </div>
 }
 
