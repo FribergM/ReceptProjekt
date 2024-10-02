@@ -4,6 +4,7 @@ import StartPage from "./Components/pages/StartPage";
 import CategoryPage from "./Components/pages/CategoriPage";
 import RecipesPage from "./Components/pages/RecipesPage";
 import { fetchData } from "./api.js";
+import { sortCategories } from "./util.js";
 
 
 
@@ -15,8 +16,9 @@ function App() {
   const fetchAllData = async () =>{
     const fetchedRecipes = await fetchData(import.meta.env.VITE_API_URL+"/recipes")
     const fetchedCategories = await fetchData(import.meta.env.VITE_API_URL+"/categories")
+    const sortedCategories = sortCategories(fetchedCategories)
     setRecipes(fetchedRecipes)
-    setCategories(fetchedCategories)
+    setCategories(sortedCategories)
   }
 
   useEffect(() => {
