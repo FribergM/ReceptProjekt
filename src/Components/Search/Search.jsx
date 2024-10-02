@@ -1,23 +1,20 @@
-import React from "react";
-import {useState} from "react";
+import React, {useState} from "react";
+import SearchedRecipes from "./SearchedRecipes";
 
-function Search() {
+
+function Search(allRecipes) {
+    console.log("search",allRecipes)
     const[query, setQuery] = useState("");
     const handleSearch = () =>{
         console.log("Search for: ",query)
-        searchSomething(query);
     };
     return<div className = "search-container">
         <input type="text" placeholder ="Search..." value={query} onChange={(e)=>{
             setQuery(e.target.value)
         }}/>
         <button className = "search-button" onClick = {handleSearch}>Search</button>
-        
+        {/* {query && (<SearchedRecipes recipes ={allRecipes} query={query} />)} */}
     </div>
-}
-
-function searchSomething(query) {
-    return "answer"
 }
 
 export default Search;

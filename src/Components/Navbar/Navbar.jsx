@@ -4,7 +4,7 @@ import Category from "../Category/Category";
 import Search from "../Search/Search";
 import './navbar.css'
 
-function NavBar({categories, showHomeButton}) {
+function NavBar({categories, recipes}) {
     return <div className = "navbar" style ={{display :"flex",justifyContent:"space-between"}}>
              {/* <div className ="hamburger-menu" onClick={() => setShowCatgories(!showCategories)}>
                 <i className ="fas fa-bars"></i>
@@ -15,7 +15,7 @@ function NavBar({categories, showHomeButton}) {
                     <Link to="/" className = "home-button">Home</Link>
                 </div>
               )} */}
-              <Search />         
+              <Search  allRecipes ={recipes}/>         
     </div>
 }
 

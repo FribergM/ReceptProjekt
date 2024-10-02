@@ -9,7 +9,7 @@ import './StartPage.css';
 function StartPage({recipes, categories}) {
     return  <div className="start-page">
         <Header />
-        <NavBar categories={categories}/>
+        <NavBar recipes ={recipes} categories={categories}/>
         <CardContainer recipes={recipes} categories={categories}/>
         <Footer />
     </div>
