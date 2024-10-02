@@ -17,7 +17,8 @@ function CategoriPage({recipes,categories}) {
             <Header />
             <NavBar categories={categories} showHomeButton={true}/>
             <h3>{category} Menu</h3>
-            <RecipCardList recipesList = {filteredRecipes} />
+            <CardContainer recipes={filteredRecipes}/>
+            {/* <RecipCardList recipesList = {filteredRecipes} /> */}
             <Footer /> 
         </div>)
 }
