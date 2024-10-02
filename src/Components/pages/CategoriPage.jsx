@@ -4,7 +4,6 @@ import CardContainer from '../CardContainer/CardContainer';
 import NavBar from '../Navbar/Navbar';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
-import RecipCardList from '../RecipesForEnCategori/RecipeList';
 
 function CategoriPage({recipes,categories}) {
     const {category} = useParams();
@@ -18,7 +17,6 @@ function CategoriPage({recipes,categories}) {
             <NavBar categories={categories} showHomeButton={true}/>
             <h3>{category} Menu</h3>
             <CardContainer recipes={filteredRecipes}/>
-            {/* <RecipCardList recipesList = {filteredRecipes} /> */}
             <Footer /> 
         </div>)
 }
