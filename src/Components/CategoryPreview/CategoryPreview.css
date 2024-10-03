@@ -1,8 +1,14 @@
 .category-wrapper{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 .category-section{
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
     margin: 1rem;
     padding: 1rem;
 }
@@ -15,4 +21,19 @@
 }
 .section-header h2 {
     color:black;
+}
+@media screen and (min-width:900px) {
+    .category-section{
+        width: 80%;
+    }
+}
+@media screen and (min-width:1400px) and (max-width:1600px){
+    .category-section{
+        width: 70%;
+    }
+}
+@media screen and (min-width:1800px) {
+    .category-section{
+        width: 70%;
+    }
 }
