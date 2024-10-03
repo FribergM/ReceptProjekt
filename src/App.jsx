@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import StartPage from "./Components/pages/StartPage";
-import CategoryPage from "./Components/pages/CategoriPage";
+import CategoryPage from "./Components/pages/CategoryPage";
 import RecipesPage from "./Components/pages/RecipesPage";
 import { fetchData } from "./api.js";
 import { sortCategories } from "./util.js";
