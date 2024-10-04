@@ -11,7 +11,7 @@
     }
 }
 
-@media screen and (min-width: 1600px) {
+@media screen and (min-width: 1400px) {
     .card-container {
         grid-template-columns: repeat(4, 1fr);
     }
