@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import StartPage from "./Components/pages/StartPage";
 import CategoryPage from "./Components/pages/CategoryPage";
 import RecipesPage from "./Components/pages/RecipesPage";
+import SearchResultPage from './Components/pages/SearchResultPage.jsx';
 import { fetchData } from "./api.js";
 import { sortCategories } from "./util.js";
 
@@ -32,6 +33,7 @@ function App() {
         <Route path="/" element ={<StartPage recipes={recipes} categories={categories}/>} />
         <Route path="/categories/:category" element ={<CategoryPage recipes={recipes} categories ={categories}/>} />
         <Route path="/recipe/:recipeId" element ={<RecipesPage recipes={recipes}/>} />
+        <Route path="/search-result" element = {<SearchResultPage recipes={recipes} categories ={categories}/>} />
       </Routes>
      </Router>
     

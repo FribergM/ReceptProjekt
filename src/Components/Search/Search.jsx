@@ -1,13 +1,16 @@
 import React, {useState} from "react";
-import SearchedRecipes from "./SearchedRecipes";
+import { useNavigate } from 'react-router-dom';
 import {FaSearch} from "react-icons/fa";
 
 
 function Search(allRecipes) {
     const [query, setQuery] = useState("");
     const [showInput, setShowInput] = useState(false);
+    const navigate = useNavigate();
+
     const handleSearch = () =>{
         console.log("Search for: ",query)
+        navigate(`/search-result?query=${encodeURIComponent(query)}`);
     };
   
     return(
