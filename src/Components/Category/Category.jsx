@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import {FaBars} from 'react-icons/fa';
 import { Link } from "react-router-dom"; 
 
 function Category({categories}) {
@@ -9,11 +10,12 @@ function Category({categories}) {
     };
 
     return (
-        <div className="category-nav">
-            <button className="category-button" onClick={handleToggleCategories}>
-                {showCategories ? "Hide" : "Categories"}
-            </button>
-            {showCategories && (
+        <>
+            <div className="navbar"> 
+             <button className="category-button" onClick={handleToggleCategories}>
+             {showCategories ? "Hide" : "Categories"}
+             </button>   
+           {showCategories && (
                 <ul className="categori-list">
                     {categories.map((category, index) => (
                         <li key={index} className="category-item">
@@ -22,8 +24,31 @@ function Category({categories}) {
                     ))}
                 </ul>
             )}
-        </div>
+            </div>
+
+            <div className="mobile-navbar">
+            <button className="mobile_category-button" onClick={handleToggleCategories}>
+            {showCategories?"X": <FaBars />}
+            </button>
+
+           {showCategories && (
+                <ul className="categori-list">
+                    {categories.map((category, index) => (
+                        <li key={index} className="category-item">
+                            <Link to={`/categories/${category.name}`}>{category.name} : {category.count}</Link>
+                        </li>
+                    ))}
+                </ul>
+            )}
+            </div>
+        </>
+        
     );
 }
 
 export default Category;
+
+
+
+
+
