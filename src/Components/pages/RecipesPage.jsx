@@ -1,5 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import Rating from "../Rating/Rating";
 
 function RecipesPage({recipes}) {
     const { recipeId } = useParams(); 
@@ -11,6 +12,7 @@ function RecipesPage({recipes}) {
         <div>
             <img src={`${import.meta.env.VITE_PUBLIC_URL}/images/${recipe.imageUrl}`} alt={recipe.title}/>
             <h1>{recipe.title}</h1>
+            <Rating id = {recipeId}></Rating>
         </div>
     )
     
