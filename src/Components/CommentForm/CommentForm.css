@@ -1,0 +1,58 @@
+.comment__form {
+    max-width: 400px;  /* Limits the form width */
+    margin: 0 auto;    /* Centers the form */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+.comment__form > div {
+    margin-bottom: 15px;
+}
+
+#comment__form-name,
+.comment__form-text {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; 
+    margin-bottom: 10px;
+}
+.comment__form-success {
+    text-align: center;
+}
+
+.comment__form-text {
+    height: 11rem;
+    resize: none;
+}
+
+.comment__form-checkbox{
+    font-size: 14px;
+    color: #555;
+}
+.comment__form-checkbox > input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+}
+
+.comment__form-button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.comment__form-button:hover {
+    background-color: #0056b3;
+}

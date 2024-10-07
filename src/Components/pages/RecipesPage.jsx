@@ -5,6 +5,7 @@ import Header from "../Header/Header";
 import NavBar from "../Navbar/Navbar";
 import Rating from "../Rating/Rating";
 import RecipeDetails from "../RecipeDetails/RecipeDetails";
+import CommentForm from "../CommentForm/CommentForm";
 import "./RecipesPage.css";
 
 function RecipesPage({ recipes, categories }) {
@@ -28,6 +29,7 @@ function RecipesPage({ recipes, categories }) {
           instructions={recipe.instructions}
         ></RecipeDetails>
         <Rating id={recipeId}></Rating>
+        <CommentForm id = {recipeId}/>
       </div>
 
       <Footer />
