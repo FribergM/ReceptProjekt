@@ -32,7 +32,7 @@ function App() {
       <Routes>
         <Route path="/" element ={<StartPage recipes={recipes} categories={categories}/>} />
         <Route path="/categories/:category" element ={<CategoryPage recipes={recipes} categories ={categories}/>} />
-        <Route path="/recipe/:recipeId" element ={<RecipesPage recipes={recipes}/>} />
+        <Route path="/recipe/:recipeId" element ={<RecipesPage recipes={recipes} categories ={categories}/>} />
         <Route path="/search-result" element = {<SearchResultPage recipes={recipes} categories ={categories}/>} />
       </Routes>
      </Router>
