@@ -14,7 +14,7 @@ function SearchResultPage({recipes, categories}) {
         <div>
             <Header />
             <NavBar recipes={recipes} categories={categories}/>
-            <h2>Result</h2>
+            {/* <h2>Result</h2> */}
             <SearchResult recipes= {recipes} query={query} />
             <Footer/>
         </div>
