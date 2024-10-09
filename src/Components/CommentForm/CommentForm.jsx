@@ -30,11 +30,12 @@ const CommentForm = ({id, addComment}) => {
 
         // const success = await postComment();
         const newComment =  await postData(import.meta.env.VITE_API_URL + `/recipes/${id}/comments`,{
-            name: form.name, 
+            name: form.isAnonymous ? 'Anonym' : form.name,
             comment: form.comment
         })
         console.log(newComment);
 
+        //Resets state if comment post fails.
         if(newComment) {
             addComment(newComment);
         }else{
@@ -62,6 +63,7 @@ const CommentForm = ({id, addComment}) => {
                         onChange={handleChange}
                         name="name"
                         placeholder='Namn'
+                        maxLength="30"
                         required={!form.isAnonymous}
                         />
                     <div>

@@ -12,6 +12,8 @@
     flex-direction: column;
     margin: 1rem;
     padding: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 5px;
 }
 .category-section h2 {
     margin-top: 0;

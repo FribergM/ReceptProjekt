@@ -33,8 +33,6 @@ function RecipesPage({ recipes, categories }) {
     return <p>Laddar recept...</p>;
   }
   const recipe = recipes.find((recipe) => recipe._id === recipeId);
-  
-  // console.log(comments);
 
   return (
     <div>

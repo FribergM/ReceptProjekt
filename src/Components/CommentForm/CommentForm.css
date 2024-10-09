@@ -1,6 +1,6 @@
 .comment__form {
-    max-width: 400px;  /* Limits the form width */
-    margin: 0 auto;    /* Centers the form */
+    max-width: 400px; 
+    margin: 0 auto 1rem;
     padding: 20px;
     background-color: #f9f9f9;
     border: 1px solid #ddd;
@@ -45,7 +45,6 @@
     width: 100%;
     padding: 12px;
     font-size: 16px;
-    color: #fff;
     background-color: #27AE60;
     border: none;
     border-radius: 5px;
