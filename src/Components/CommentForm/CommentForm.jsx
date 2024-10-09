@@ -1,14 +1,14 @@
 import React from 'react';
 import { useState } from 'react'
 import './CommentForm.css'
+import { postData } from '../../api';
 
-const CommentForm = ({id}) => {
+const CommentForm = ({id, addComment}) => {
     const [form, setForm] = useState({
         comment: "",
         name: "",
         isAnonymous: false,
         isSubmitted: false,
-        // date: "",
     })
 
     const handleChange = (e) => {
@@ -18,7 +18,7 @@ const CommentForm = ({id}) => {
             [name]: type === 'checkbox' ? checked : value
         }));
     }
-    console.log(form)
+    // console.log(form)
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -28,45 +28,23 @@ const CommentForm = ({id}) => {
             isSubmitted: true
         }));
 
-        const success = await postComment();
+        // const success = await postComment();
+        const newComment =  await postData(import.meta.env.VITE_API_URL + `/recipes/${id}/comments`,{
+            name: form.name, 
+            comment: form.comment
+        })
+        console.log(newComment);
 
-        if(!success) {
+        if(newComment) {
+            addComment(newComment);
+        }else{
             setForm(prev => ({
                 ...prev,
                 isSubmitted: false
             }));
         }
+        
     }
-
-    const postComment = async () => {
-        try {
-            const response = await fetch(
-                import.meta.env.VITE_API_URL + `/recipes/${id}/comments`,
-                {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify({
-                        comment: form.comment,
-                        name: form.isAnonymous ? 'Anonym' : form.name
-                    }),
-                }
-            );
-    
-            if (response.ok) {
-                console.log("Ok:", { id });
-                return true;
-            } else {
-                console.error("Error:", response.statusText);
-                return false;
-            }
-
-        } catch (error) {
-          console.error("Error:", error);
-          return false;
-        }
-      };
     
     return (
         <div className='comment__form-container'>

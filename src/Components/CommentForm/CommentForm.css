@@ -46,13 +46,9 @@
     padding: 12px;
     font-size: 16px;
     color: #fff;
-    background-color: #007BFF;
+    background-color: #27AE60;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-}
-
-.comment__form-button:hover {
-    background-color: #0056b3;
 }
