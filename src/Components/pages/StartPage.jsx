@@ -10,7 +10,9 @@ function StartPage({recipes, categories}) {
     return  <div className="start-page">
         <Header />
         <NavBar recipes={recipes} categories={categories}/>
-        <CategoryPreview recipes={recipes} categories={categories}/>
+        <main>
+            <CategoryPreview recipes={recipes} categories={categories}/>
+        </main>
         <Footer />
     </div>
 }

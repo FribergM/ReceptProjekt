@@ -16,7 +16,7 @@ function Search(allRecipes) {
     return(
         <>
             <div className="navbar">
-                <input type="text" placeholder="skriv in recipe namn" value={query} onChange={(e) =>{setQuery(e.target.value)}} />
+                <input className="search-input"type="text" placeholder="skriv in recipe namn" value={query} onChange={(e) =>{setQuery(e.target.value)}} />
                 <button className="search-button" onClick ={handleSearch}>Search</button>
             </div>
 
@@ -25,7 +25,7 @@ function Search(allRecipes) {
             <button className="mobile_search-button" onClick= {() => setShowInput(!showInput)}><FaSearch /></button>
                 {showInput && (
                 <div>
-                  <input type="text" placeholder="skriv in recipe namn" value={query} onChange={(e) =>{setQuery(e.target.value)}} />
+                  <input className="search-input"type="text" placeholder="skriv in recipe namn" value={query} onChange={(e) =>{setQuery(e.target.value)}} />
                   <button className = "submit-button" onClick={handleSearch}>Search</button>
                 </div>)}
             </div>

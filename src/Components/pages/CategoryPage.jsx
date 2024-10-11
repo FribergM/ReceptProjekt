@@ -16,12 +16,14 @@ function CategoryPage({recipes,categories}) {
          <div className = "category-page">
             <Header />
             <NavBar categories={categories} showHomeButton={true}/>
-            <div className="category-wrapper">
-                <div className="category-section">
-                    <h2>{category} Menu</h2>
-                    <CardContainer recipes={filteredRecipes}/>
+            <main>
+                <div className="category-wrapper">
+                    <div className="category-section">
+                        <h2>{category} Menu</h2>
+                        <CardContainer recipes={filteredRecipes}/>
+                    </div>
                 </div>
-            </div>
+            </main>
             <Footer/>
         </div>)
 }

@@ -35,23 +35,25 @@ function RecipesPage({ recipes, categories }) {
   const recipe = recipes.find((recipe) => recipe._id === recipeId);
 
   return (
-    <div>
+    <div className="recipe-page">
       <Header />
       <NavBar recipes={recipes} categories={categories} />
-      <div className="recipe-page-container">
-        <RecipeDetails
-          image={recipe.imageUrl}
-          title={recipe.title}
-          description={recipe.description}
-          time={recipe.timeInMins}
-          rating={recipe.avgRating}
-          ingredients={recipe.ingredients}
-          instructions={recipe.instructions}
-        ></RecipeDetails>
-        <Rating id={recipeId}></Rating>
-        <CommentForm id={recipeId} addComment={addComment}/>
-        <CommentContainer comments={comments}/>
-      </div>
+      <main>
+        <div className="recipe-page-container">
+          <RecipeDetails
+            image={recipe.imageUrl}
+            title={recipe.title}
+            description={recipe.description}
+            time={recipe.timeInMins}
+            rating={recipe.avgRating}
+            ingredients={recipe.ingredients}
+            instructions={recipe.instructions}
+            ></RecipeDetails>
+          <Rating id={recipeId}></Rating>
+          <CommentForm id={recipeId} addComment={addComment}/>
+          <CommentContainer comments={comments}/>
+        </div>
+      </main>
 
       <Footer />
     </div>

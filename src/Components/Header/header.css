@@ -1,31 +1,46 @@
-.header {
-    background-image: url('../../../images/headerimg2.jpeg');
-    background-size:cover;
-    background-position: center;
-    height: 50vh; 
+.header-container{
+    background-color: green;
+    width: 100%;
     display: flex; 
     align-items: center; 
     justify-content: center; 
+    padding: 1rem;
+    box-sizing: border-box;
+}
+.header {
+    background-image: url('../../../images/MangiaHeader.webp');
+    background-size:cover;
+    background-position: center;
     text-align: center; 
-    width: 100vw;
+    display:flex;
+    align-items: center; 
+    justify-content: left; 
+    height: 20vh;
+
+    width: 100%;
     margin: 0;
-    padding: 0;
+    padding: 0 2rem;
 }
-
 .header__name {
-    font-size: 10vw; 
-    font-family: 'Great Vibes',cursive;
-    font-style: 'italic';
-    color: #808000;
+    font-size: 5rem; 
+    font-family: 'Cinzel, serif';
+    color: yellow;
     margin: 0; 
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+.header-link{
+    width: 100%;
+    box-sizing: border-box;
+    align-items: center; 
+    justify-content: center; 
 }
 
-@media (max-width: 600px) {
+@media (min-width: 600px) {
     .header {
-        height: 20vh;
+        height: 50vh; 
     }
-    header__name {
-        font-size:20vw;
+    .header__name {
+        font-size:10rem;
     }
     
 }
