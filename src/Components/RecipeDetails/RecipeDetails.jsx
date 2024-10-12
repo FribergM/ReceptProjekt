@@ -5,7 +5,8 @@ const RecipeDetails = ({
   image,
   title,
   description,
-  time,
+  time, 
+  difficulty,
   rating,
   ingredients,
   instructions,
@@ -22,6 +23,7 @@ const RecipeDetails = ({
       <p className="recipe-details-description">{description}</p>
       <div className="recipe-details-time-rating">
         <h2>Tillagningstid: {time} min</h2>
+        <h2>Svårighetsgrad: {difficulty}</h2>
         <h2>Betyg: {roundedRating}/5</h2>
       </div>
       <div className="ingredients-instructions-container">

@@ -5,7 +5,7 @@ import CategoryPage from "./Components/pages/CategoryPage";
 import RecipesPage from "./Components/pages/RecipesPage";
 import SearchResultPage from './Components/pages/SearchResultPage.jsx';
 import { fetchData } from "./api.js";
-import { sortCategories } from "./util.js";
+import { sortCategories, calculateRecipeDifficulty } from "./util.js";
 
 
 
@@ -16,9 +16,13 @@ function App() {
 
   const fetchAllData = async () =>{
     const fetchedRecipes = await fetchData(import.meta.env.VITE_API_URL+"/recipes")
+    const modifiedRecipes = fetchedRecipes.map(recipe => ({
+      ...recipe,
+      difficulty: calculateRecipeDifficulty(recipe.timeInMins, recipe.ingredients, recipe.instructions),
+    }));
     const fetchedCategories = await fetchData(import.meta.env.VITE_API_URL+"/categories")
     const sortedCategories = sortCategories(fetchedCategories)
-    setRecipes(fetchedRecipes)
+    setRecipes(modifiedRecipes)
     setCategories(sortedCategories)
   }
 

@@ -45,6 +45,7 @@ function RecipesPage({ recipes, categories }) {
             title={recipe.title}
             description={recipe.description}
             time={recipe.timeInMins}
+            difficulty={recipe.difficulty}
             rating={recipe.avgRating}
             ingredients={recipe.ingredients}
             instructions={recipe.instructions}
