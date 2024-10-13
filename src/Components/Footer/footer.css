@@ -16,6 +16,8 @@
     font-weight: bold;
     margin: 10px 0; 
     color: #333; 
+    color: beige; 
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
 }
 
 .footer-links {
@@ -29,7 +31,8 @@
 .footer-links a {
     margin: 0 10px; 
     text-decoration: none; 
-    color: #007BFF; 
+    color: beige; 
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
 }
 
 .footer-links a:hover{

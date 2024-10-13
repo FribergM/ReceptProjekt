@@ -19,7 +19,9 @@ function CategoryPage({recipes,categories}) {
             <main>
                 <div className="page__content-wrapper">
                     <div className="page__content-section">
-                        <h2>{category} Menu</h2>
+                        <div className="section-header">
+                            <h2>{category} Menu</h2>
+                        </div>
                         <CardContainer recipes={filteredRecipes}/>
                     </div>
                 </div>
