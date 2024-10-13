@@ -4,7 +4,7 @@
     display: flex; 
     align-items: center; 
     justify-content: center; 
-    padding: 1rem;
+    padding: 0.5rem;
     box-sizing: border-box;
 }
 .header {
@@ -14,12 +14,11 @@
     text-align: center; 
     display:flex;
     align-items: center; 
-    justify-content: left; 
+    justify-content: center; 
     height: 20vh;
-
     width: 100%;
     margin: 0;
-    padding: 0 2rem;
+    padding: 0;
 }
 .header__name {
     font-size: 5rem; 
@@ -35,9 +34,14 @@
     justify-content: center; 
 }
 
-@media (min-width: 600px) {
+@media (min-width: 800px) {
+    .header-container{
+        padding: 1rem;
+    }
     .header {
         height: 50vh; 
+        justify-content: left; 
+        padding: 0 2rem;
     }
     .header__name {
         font-size:10rem;
