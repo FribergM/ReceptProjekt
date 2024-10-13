@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 function Category({categories}) {
     const [showCategories, setShowCategories] = useState(false);
 
+    const filteredCategories = categories.slice(0,10)
+
     const handleToggleCategories = () => {
         setShowCategories(!showCategories);
     };
@@ -17,7 +19,7 @@ function Category({categories}) {
              </button>   
            {showCategories && (
                 <ul className="categori-list">
-                    {categories.map((category, index) => (
+                    {filteredCategories.map((category, index) => (
                         <li key={index} className="category-item">
                             <Link to={`/categories/${category.name}`}>{category.name} : {category.count}</Link>
                         </li>
@@ -33,7 +35,7 @@ function Category({categories}) {
 
            {showCategories && (
                 <ul className="categori-list">
-                    {categories.map((category, index) => (
+                    {filteredCategories.map((category, index) => (
                         <li key={index} className="category-item">
                             <Link to={`/categories/${category.name}`}>{category.name} : {category.count}</Link>
                         </li>

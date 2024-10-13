@@ -4,13 +4,15 @@ import { Link } from "react-router-dom";
 
 const CategoryPreview = ({recipes, categories}) => {
 
+    const mainCategories = categories.slice(0,3);
+
     const getRecipesByCategory = (category) => {
         return recipes.filter(recipe => recipe.categories.includes(category));
     }
 
     return (
         <div className='page__content-wrapper'>
-            {categories.map((category, index) => {
+            {mainCategories.map((category, index) => {
                 const recipesOfCategory = getRecipesByCategory(category.name);
                 return (
                     <div key={index} className='page__content-section'>
