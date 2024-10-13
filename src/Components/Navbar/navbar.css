@@ -16,7 +16,7 @@
     .navbar{
         display: flex;
         gap: 0.1em;
-        background-color: green;
+        background-color: #236e26;
 
     }
 
@@ -64,7 +64,7 @@
     align-items: flex-start;;
     padding: 1rem;
     margin: 0;
-    background-color: green;
+    background-color: #236e26;
    }
 
    .mobile_category-button, .mobile_search-button {
@@ -83,6 +83,9 @@
     }
     .search-input {
         background-color: beige;
+        padding: 0.75em;
+        border-radius: 0.5rem;
+        width: 7rem;
     }
 
 }
