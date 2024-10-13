@@ -13,12 +13,12 @@ function CategoryPage({recipes,categories}) {
     //console.log("categories:", recipes.categories)
 
     return (
-         <div className = "category-page">
+         <div className = "category-page, page">
             <Header />
             <NavBar categories={categories} showHomeButton={true}/>
             <main>
-                <div className="category-wrapper">
-                    <div className="category-section">
+                <div className="page__content-wrapper">
+                    <div className="page__content-section">
                         <h2>{category} Menu</h2>
                         <CardContainer recipes={filteredRecipes}/>
                     </div>

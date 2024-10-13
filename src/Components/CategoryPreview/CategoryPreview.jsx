@@ -1,5 +1,4 @@
 import React from 'react'
-import './CategoryPreview.css';
 import CardContainer from '../CardContainer/CardContainer';
 import { Link } from "react-router-dom";
 
@@ -10,11 +9,11 @@ const CategoryPreview = ({recipes, categories}) => {
     }
 
     return (
-        <div className='category-wrapper'>
+        <div className='page__content-wrapper'>
             {categories.map((category, index) => {
                 const recipesOfCategory = getRecipesByCategory(category.name);
                 return (
-                    <div key={index} className='category-section'>
+                    <div key={index} className='page__content-section'>
                         <div className='section-header'>
                             <Link to={`/categories/${category.name}`}><h2>{category.name}</h2></Link>
                             <Link to={`/categories/${category.name}`}><button>Se mer</button></Link>

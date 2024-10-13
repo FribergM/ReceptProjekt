@@ -14,6 +14,7 @@ body {
 main{
   background-color: beige;
   width: 100%;
+  flex-grow: 1;
 }
 
 a {
@@ -44,4 +45,61 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+
+/***************************************
+  Page content styling & responsiveness.
+****************************************/
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.page__content-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.page__content-section{
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  padding: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+}
+.page__content-section h2 {
+  margin-top: 0;
+}
+.section-header{
+  display: flex;
+  justify-content: space-between;
+}
+.section-header h2 {
+  color:black;
+}
+
+@media screen and (min-width:900px) {
+  .page__content-section{
+      width: 80%;
+  }
+}
+@media screen and (min-width:1600px) {
+  .page__content-section{
+      width: 70%;
+  }
+}
+
+@media screen and (min-width:2000px) {
+  .page__content-section{
+      width: 60%;
+  }
 }

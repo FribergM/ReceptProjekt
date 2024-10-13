@@ -1,6 +1,5 @@
 import React from 'react';
 import {useLocation} from 'react-router-dom';
-import CardContainer from '../CardContainer/CardContainer';
 import NavBar from '../Navbar/Navbar';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
@@ -11,11 +10,10 @@ function SearchResultPage({recipes, categories}) {
     const query = new URLSearchParams(location.search).get('query') ||'';
 
     return(
-        <div>
+        <div className="page">
             <Header />
             <NavBar recipes={recipes} categories={categories}/>
             <main>
-                {/* <h2>Result</h2> */}
                 <SearchResult recipes= {recipes} query={query} />
             </main>
             <Footer/>

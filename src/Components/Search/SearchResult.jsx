@@ -30,8 +30,8 @@ function SearchResult ({recipes, query})  {
     :nameMatchRecipes;
 
     return (
-      <div className="searched-recipes, recipes-wrapper">
-        <div className ="category-section">
+      <div className="searched-recipes, page__content-wrapper">
+        <div className ="page__content-section">
           <h2>Result</h2>
              <h4>
               {isNum?(<>

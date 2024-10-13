@@ -35,7 +35,7 @@ function RecipesPage({ recipes, categories }) {
   const recipe = recipes.find((recipe) => recipe._id === recipeId);
 
   return (
-    <div className="recipe-page">
+    <div className="recipe-page, page">
       <Header />
       <NavBar recipes={recipes} categories={categories} />
       <main>
