@@ -47,11 +47,15 @@ function RecipesPage({ recipes, categories }) {
             time={recipe.timeInMins}
             difficulty={recipe.difficulty}
             rating={recipe.avgRating}
+            categories={recipe.categories}
             ingredients={recipe.ingredients}
             instructions={recipe.instructions}
-            ></RecipeDetails>
-          <Rating id={recipeId}></Rating>
-          <CommentForm id={recipeId} addComment={addComment}/>
+            />
+          <div className="rating-comment-container">
+            <Rating id={recipeId}/>
+            <CommentForm id={recipeId} addComment={addComment}/>
+          </div>  
+          
           <CommentContainer comments={comments}/>
         </div>
       </main>
