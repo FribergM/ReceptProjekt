@@ -16,7 +16,7 @@ function Search(allRecipes) {
     return(
         <>
             <div className="navbar">
-                <input className="search-input"type="text" placeholder="skriv in recipe namn" value={query} onChange={(e) =>{setQuery(e.target.value)}} />
+                <input className="search-input"type="text" placeholder="sök för..." value={query} onChange={(e) =>{setQuery(e.target.value)}} />
                 <button className="search-button" onClick ={handleSearch}>Search</button>
             </div>
 
