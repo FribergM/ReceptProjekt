@@ -56,6 +56,16 @@ const CommentForm = ({id, addComment}) => {
                 </div>
             ) : (
                 <form onSubmit={handleSubmit} className='comment__form'>
+                    <h2>Kommentera eller fråga</h2>
+                    <textarea
+                        className='comment__form-text'
+                        onChange={handleChange}
+                        name="comment"
+                        placeholder='Skriv en kommentar'
+                        maxLength="365"
+                        wrap='soft'
+                        required
+                        />
                     <input
                         id='comment__form-name'
                         className=''
@@ -77,15 +87,7 @@ const CommentForm = ({id, addComment}) => {
                         </label>
                     </div>
                     
-                    <textarea
-                        className='comment__form-text'
-                        onChange={handleChange}
-                        name="comment"
-                        placeholder='Lämna gärna en kommentar!'
-                        maxLength="300"
-                        wrap='soft'
-                        required
-                        />
+                    
                     <button className="comment__form-button" type="submit">Skicka in</button>
                 </form>
             )}

@@ -161,6 +161,9 @@ li input[type="checkbox"]:checked::after {
   .recipe-details-description {
     font-size: 1rem;
   }
+  .recipe-details-category{
+    margin: 0 0.5rem;
+  }
   .recipe-details-time-rating h2 {
     text-align: center;
     margin: 0 auto;
@@ -173,10 +176,6 @@ li input[type="checkbox"]:checked::after {
     flex-direction: column;
     justify-content: center;
     margin: 0 -1rem;
-  }
-
-  .recipe-details-category-container {
-    gap: 1rem;
   }
 
   .recipe-details-ingredients li,
