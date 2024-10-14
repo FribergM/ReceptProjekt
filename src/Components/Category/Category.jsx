@@ -4,20 +4,29 @@ import { Link } from "react-router-dom";
 import "./Category.css"
 
 function Category({categories}) {
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 600)
 
     const [showCategories, setShowCategories] = useState(false);
 
     const filteredCategories = categories.slice(0,10)
 
+    const resize = ()=> {
+        setIsMobile(window.innerWidth <= 600)
+    }
+
     const toggleSidebar = () => {
         setShowCategories(!showCategories);
     };
+    useEffect (()=> {
+        window.addEventListener('resize', resize)
+    },[])
 
     return (
         <>
             <div className="container">
                 <button onClick={toggleSidebar} className="sidebar-toggle">
-                    Kategorier
+                    {/* Kategorier */}
+                    {isMobile ?<FaBars />:"Kategorier"}
                 </button>
 
                 <div className={`sidebar ${showCategories ? 'active' : ''}`}>
