@@ -32,9 +32,9 @@ const Rating = ({ id }) => {
 
   return (
     <div className="rating">
-      <p className="rating-label">
+      <h2 className="rating-label">
         {isRated ? "Tack för ditt omdöme!" : "Lämna ett omdöme"}
-      </p>
+      </h2>
 
       {!isRated && (
         <div>

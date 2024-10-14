@@ -1,3 +1,41 @@
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+li.checked {
+  opacity: 0.7;
+  text-decoration: line-through;
+}
+
+li input[type="checkbox"] {
+  appearance: none; /* Remove default checkbox styling */
+  width: 1.5rem; /* Custom width */
+  height: 1.5rem; /* Custom height */
+  border: 2px solid green; /* Blue border */
+  border-radius: 1rem;
+  margin-right: 0.5rem; /* Space between checkbox and label */
+  cursor: pointer; /* Change cursor to pointer */
+  position: relative; /* For positioning the checkmark */
+  flex-shrink: 0; /* Prevent checkbox from shrinking */
+}
+
+li input[type="checkbox"]:checked {
+  background-color: green;
+}
+
+li input[type="checkbox"]:checked::after {
+  content: ''; /* Create the checkmark */
+  position: absolute;
+  left: 7px; /* Position checkmark */
+  top: 3px; /* Position checkmark */
+  width: 5px; /* Width of the checkmark */
+  height: 10px; /* Height of the checkmark */
+  border: solid white; /* White checkmark */
+  border-width: 0 2px 2px 0; /* Create checkmark shape */
+  transform: rotate(45deg); /* Rotate to create checkmark */
+}
+
 .recipe-details-container {
   display: flex;
   flex-direction: column;
@@ -7,15 +45,35 @@
   margin: 2rem auto;
   padding: 2rem;
   background-color: #fff;
+  border-radius: 0.5rem 0.5rem 0 0;
   box-sizing: border-box;
 }
 
+.recipe-details-category-container {
+  display: flex;
+  justify-content: center;
+  margin: 2rem;
+  padding-bottom: 2rem;
+  box-sizing: border-box;
+}
+
+.recipe-details-category {
+  border: solid 1px grey;
+  border-radius: 1rem;
+  background-color: rgb(255, 251, 251);
+  padding: 0.5rem;
+  margin: 0 1rem;
+  font-size: 1.1em;
+}
+
 .recipe-details-image {
-  width: 100%;
   height: auto;
   border-radius: 0.5rem;
-  margin-bottom: 2rem;
   box-sizing: border-box;
+  max-width: 50%;
+  flex: 1;
+  aspect-ratio: 1/1;
+  object-fit: cover;
 }
 
 .recipe-details-title {
@@ -24,22 +82,28 @@
   margin-bottom: 1.5rem;
 }
 
+.recipe-details-top-right{
+  flex: 1;
+  padding: 0 2rem;
+  max-width: 50%;
+  width: auto;
+  box-sizing: border-box;
+}
+
 .recipe-details-description {
   font-size: 1.25rem;
   text-align: center;
 }
 
-.recipe-details-time-rating h2 {
+.recipe-details-time-rating h3 {
   display: inline;
   margin: 0 auto;
 }
 
 .recipe-details-time-rating {
   margin-bottom: 2rem;
-}
-
-.recipe-details-time-rating h2:last-of-type {
-  padding-left: 4rem;
+  display: flex;
+  justify-content: center;
 }
 
 .recipe-details-ingredients,
@@ -55,16 +119,43 @@
   margin: 0 -1rem;
 }
 
+.recipe-details-top {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  background-color: rgb(255, 255, 240);
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+}
+
 .recipe-details-ingredients li,
 .recipe-details-instructions li {
   font-size: 1.125rem;
   line-height: 1.5;
   margin-bottom: 0.5rem;
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Center items vertically */
+  margin: 1rem 0;
+}
+
+.recipe-details-instructions li {
+  align-items: flex-start;
 }
 
 @media (max-width: 600px) {
   .recipe-details-title {
     font-size: 1.75rem;
+  }
+
+  .recipe-details-top {
+    flex-direction: column;
+    margin: 0;
+  }
+
+  .recipe-details-top-right {
+   max-width: 100%;
   }
 
   .recipe-details-description {
@@ -77,10 +168,6 @@
     font-size: 1.25rem;
   }
 
-  .recipe-details-time-rating h2:last-of-type {
-    padding-left: 0;
-  }
-
   .ingredients-instructions-container {
     display: flex;
     flex-direction: column;
@@ -88,13 +175,18 @@
     margin: 0 -1rem;
   }
 
+  .recipe-details-category-container {
+    gap: 1rem;
+  }
+
   .recipe-details-ingredients li,
   .recipe-details-instructions li {
     font-size: 1rem;
+    padding: 0 2rem;
   }
   .recipe-details-ingredients h2,
   .recipe-details-instructions h2 {
-    text-align: center;
+    padding-left: 2rem;
   }
 
   .recipe-details-ingredients,
@@ -110,5 +202,10 @@
 
   .recipe-details-image {
     margin-bottom: 1.5rem;
+    max-width: 100%;
+  }
+
+  .recipe-details-category-container {
+    margin-bottom: 2rem;
   }
 }
