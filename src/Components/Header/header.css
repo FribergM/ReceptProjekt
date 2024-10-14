@@ -7,11 +7,13 @@
     padding: 0.5rem;
     padding-bottom: 0;
     box-sizing: border-box;
+    /* background: linear-gradient(to right, #008C45 33.33%, #F4F5F0 33.33%, #F4F5F0 66.66%, #CD212A 66.66%); */
 }
 .header {
     background-image: url('../../../images/MangiaHeader.webp');
     background-size:cover;
     background-position: center;
+    border-radius: 15px;
     display:flex;
     height: 20vh;
     width: 100%;

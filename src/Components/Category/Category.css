@@ -1,9 +1,9 @@
-.container {
+.sidebar-container {
   position: relative;
 }
 
 .sidebar {
-  position: absolute;
+  position:absolute;
   display:flex;
   flex-direction: column;
   left: -110vw; 
@@ -11,19 +11,23 @@
   background-color: #333;
   background-color: rgb(255, 255, 240);
   transition: left 0.3s ease;
-  z-index: 1;
+  z-index: 1000;
   margin-top: 1rem;
   box-shadow: 3px 3px 5px rgba(0,0,0,0.5);
-
-  border-bottom-right-radius: 10px;
 }
 
 .sidebar a {
-  padding: 15px;
+  padding: 1rem;
+  padding-left: 1.5rem;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 1.2rem;
+  font-weight: 500;
   color: black;
   display: block;
+  transition: background-color 0.3s ease
+}
+.sidebar a:hover{
+  background-color: #b3b39a;
 }
 
 .sidebar.active {
@@ -33,5 +37,6 @@
 @media screen and (min-width: 600px) {
   .sidebar{
       width: 15rem;
+      border-bottom-right-radius: 10px;
   }
 }

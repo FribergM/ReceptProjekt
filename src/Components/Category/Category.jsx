@@ -23,7 +23,7 @@ function Category({categories}) {
 
     return (
         <>
-            <div className="container">
+            <div className="sidebar-container">
                 <button onClick={toggleSidebar} className="sidebar-toggle">
                     {/* Kategorier */}
                     {isMobile ?<FaBars />:"Kategorier"}
