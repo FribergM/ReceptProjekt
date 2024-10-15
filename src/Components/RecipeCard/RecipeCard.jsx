@@ -7,7 +7,7 @@ const RecipeCard = ({ id, image, name, description, rating, categories, timeInMi
   return (
     <Link to={`/recipe/${id}`}>
       <div className="recipe-card">
-        <img src={`${import.meta.env.VITE_PUBLIC_URL}/images/${image}`} alt={name} className="recipe-image" />
+        <img src={`/images/${image}`} alt={name} className="recipe-image" />
         <div className="recipe-info">
           <h2 className="recipe-name">{name}</h2>
           <p className="recipe-description">{description}</p>

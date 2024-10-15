@@ -33,7 +33,7 @@ const RecipeDetails = ({
     <div className="recipe-details-container">
       <div className="recipe-details-top">
         <img
-          src={`${import.meta.env.VITE_PUBLIC_URL}/images/${image}`}
+          src={`/images/${image}`}
           alt={title}
           className="recipe-details-image"
         />
