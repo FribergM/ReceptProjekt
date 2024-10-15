@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './Footer.css'; 
+import './footer.css'; 
 
 const Modal = ({ type, onClose }) => {
     const getContent = () => {
