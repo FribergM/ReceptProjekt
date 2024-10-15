@@ -17,7 +17,6 @@
         display: flex;
         gap: 0.1em;
         background-color: #236e26;
-        /* background-color: #dbd2b4; */
 
     }
 
@@ -84,10 +83,10 @@
     }
     .search-input {
         background-color: beige;
-        padding: 0.75em;
+        height: 2em;
+        padding: 0.6em 1.2em;
         border-radius: 0.5rem;
         width: 7rem;
     }
-
 }
     
