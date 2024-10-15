@@ -1,23 +1,36 @@
-import React from "react";
-import {useState} from "react";
+import React, {useState} from "react";
+import { useNavigate } from 'react-router-dom';
+import {FaSearch} from "react-icons/fa";
 
-function Search() {
-    const[query, setQuery] = useState("");
+
+function Search(allRecipes) {
+    const [query, setQuery] = useState("");
+    const [showInput, setShowInput] = useState(false);
+    const navigate = useNavigate();
+
     const handleSearch = () =>{
         console.log("Search for: ",query)
-        searchSomething(query);
+        navigate(`/search-result?query=${encodeURIComponent(query)}`);
     };
-    return<div className = "search-container">
-        <input type="text" placeholder ="Search..." value={query} onChange={(e)=>{
-            setQuery(e.target.value)
-        }}/>
-        <button onClick = {handleSearch}>Search</button>
-        
-    </div>
-}
+  
+    return(
+        <>
+            <div className="navbar">
+                <input className="search-input"type="text" placeholder="sök för..." value={query} onChange={(e) =>{setQuery(e.target.value)}} />
+                <button className="search-button" onClick ={handleSearch}>Search</button>
+            </div>
 
-function searchSomething(query) {
-    return "answer"
+            
+            <div className ="mobile-navbar">
+            <button className="mobile_search-button" onClick= {() => setShowInput(!showInput)}><FaSearch /></button>
+                {showInput && (
+                <div>
+                  <input className="search-input"type="text" placeholder="skriv in recipe namn" value={query} onChange={(e) =>{setQuery(e.target.value)}} />
+                  <button className = "submit-button" onClick={handleSearch}>Search</button>
+                </div>)}
+            </div>
+        </>
+    )
 }
 
 export default Search;

@@ -1,5 +1,5 @@
 .recipe-card {
-  width: 300px;
+  min-width: 250px;
   border: 1px solid #ddd;
   border-radius: 10px;
   overflow: hidden;
@@ -19,18 +19,29 @@
 
 .recipe-info {
   padding: 15px;
+  background-color: #ffffff;
 }
 
 .recipe-name {
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  white-space: nowrap; 
 }
 
 .recipe-description {
   font-size: 14px;
+  height: 3em;
   color: #555;
   margin-bottom: 10px;
+  overflow: hidden;
+  line-clamp: 2;
+  text-overflow: ellipsis;
+  display: -webkit-box; 
+  -webkit-line-clamp: 2; 
+  -webkit-box-orient: vertical; 
 }
 
 .recipe-meta {
