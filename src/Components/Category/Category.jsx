@@ -44,7 +44,7 @@ function Category({categories}) {
 
                 <div className={`sidebar ${showCategories ? 'active' : ''}`}>
                     {filteredCategories.map((category,index) =>(
-                        <Link className="category-item" key={index} to={`/categories/${category.name}`} onClick={toggleSidebar}>{category.name} : {category.count}</Link>
+                        <Link className="category-item" key={index} to={`/categories/${category.name}`} onClick={toggleSidebar}>{category.name}</Link>
                     ))}
                 </div>
              </div>
