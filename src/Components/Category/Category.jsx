@@ -27,7 +27,7 @@ function Category({categories}) {
     useEffect (()=> {
         window.addEventListener('resize', resize)
 
-        //Removes the eventlistener if the component unmounts
+        
         return () => {
             window.removeEventListener("resize", resize);
         };
@@ -48,24 +48,7 @@ function Category({categories}) {
                     ))}
                 </div>
              </div>
-
-            {/* </div> */}
-
-            
-            
-                {/* <div className="mobile-navbar">
-                   <button className="mobile_category-button" >
-                       <FaBars />
-                          <div className="category-content">
-                              {filteredCategories.map((category, index) => (
-                                <Link className = "category-item" key={index} to={`/categories/${category.name}`}>{category.name} : {category.count}</Link>  
-                        ))}
-                    </div>
-                   </button>
-                </div> */}
-
-        </>
-        
+        </>       
     );
 }
 

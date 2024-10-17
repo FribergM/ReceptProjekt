@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import { useNavigate } from 'react-router-dom';
 import {FaSearch} from "react-icons/fa";
 
@@ -7,6 +7,7 @@ function Search(allRecipes) {
     const [query, setQuery] = useState("");
     const [showInput, setShowInput] = useState(false);
     const navigate = useNavigate();
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 600)
 
     const handleSearch = () =>{
         console.log("Search for: ",query)
@@ -19,23 +20,29 @@ function Search(allRecipes) {
             handleSearch()
         }
     })
+
+    const resize = () => {
+        setIsMobile(window.innerWidth <= 600)
+    }
+
+   useEffect (( )=> {
+    window.addEventListener('resize', resize)
+    return () =>{
+        window.removeEventListener("resize",resize);
+    };
+   },[])
+
   
     return(
         <>
-            <div className="navbar">
-                <input className="search-input"type="text" placeholder="sök för..." value={query} onChange={(e) =>{setQuery(e.target.value)}} onKeyDown = {handleKeyDown}/>
-                {/* <button className="search-button" onClick ={handleSearch}>Search</button> */}
-            </div>
-
-
-            <div className="mobile-navbar">
+            <div className = "search_knapp">
+                {isMobile ? 
+                <>
                 {!showInput ? (
-                    
                     <button  className="mobile_search-button"  onClick={() => setShowInput(true)}>
                     <FaSearch />
                     </button>
                 ) : (
-            
                     <div>
                     <input
                         className="search-input"
@@ -44,13 +51,19 @@ function Search(allRecipes) {
                         value={query}
                         onChange={(e) => setQuery(e.target.value)}
                         onKeyDown={handleKeyDown}
-                    />
-                    {/* <button className="submit-button" onClick={handleSearch}>
-                        Search
-                    </button> */}
+                    /> 
                     </div>
                 )}
-                </div>
+               </>
+                
+                :(<input 
+                    className="search-input"
+                    type = "text"
+                    placeholder="sök för"
+                    value ={query}
+                    onChange ={(e) => setQuery(e.target.value)}
+                    onKeyDown={handleKeyDown}/>)}
+            </div>
         </>
     )
 }

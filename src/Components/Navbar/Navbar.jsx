@@ -8,17 +8,10 @@ import './navbar.css'
 
 function NavBar({categories, recipes}) {
     return(
-      <>
-        <div className ="navbar nav-desk">
+      <div className ="navbar nav-desk">
           <Category className = "navbar" categories={categories}/>
           <Search class ="navbar" allRecipes = {recipes} />
         </div>
-
-        <div className ="mobile-navbar nav-mobile">
-          <Category  className = "mobil-navbar" categories ={categories} />
-          <Search className ="mobile-navbar"allRecipes ={recipes} />
-        </div>
-      </>
     )
 
 }
