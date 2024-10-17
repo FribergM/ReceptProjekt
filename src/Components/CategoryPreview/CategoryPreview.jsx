@@ -1,6 +1,7 @@
 import React from 'react'
 import CardContainer from '../CardContainer/CardContainer';
 import { Link } from "react-router-dom";
+import RecipeCarousel from '../RecipeCarousel/RecipeCarousel';
 
 const CategoryPreview = ({recipes, categories}) => {
 
@@ -20,7 +21,9 @@ const CategoryPreview = ({recipes, categories}) => {
                             <Link to={`/categories/${category.name}`}><h2>{category.name}</h2></Link>
                             <Link to={`/categories/${category.name}`}><button>Se mer</button></Link>
                         </div>
-                        <CardContainer recipes={recipesOfCategory.slice(0,4)}/>
+                        <div className='carousel-container'>
+                            <RecipeCarousel recipes = {recipesOfCategory}/>
+                        </div>
                     </div>
                 );
             })}
