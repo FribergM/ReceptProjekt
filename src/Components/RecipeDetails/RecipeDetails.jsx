@@ -42,9 +42,28 @@ const RecipeDetails = ({
           <p className="recipe-details-description">{description}</p>
         
           <div className="recipe-details-time-rating">
-            <h3>Ikon1 {time} min</h3>
-            <h3>Ikon2 {difficulty}</h3>
-            <h3>Ikon3 {roundedRating}</h3>
+            <div className="icon-container">
+              <img src="/icons/TimeIcon.svg" alt="Time Icon" className="recipe-icon" />
+              <h3>{time} min</h3>
+            </div>
+
+            <div className="icon-container">
+              <img 
+              src={
+                difficulty === "Enkel"
+                  ? "/icons/DifficultyEasy.svg"
+                  : difficulty === "Medel"
+                  ? "/icons/DifficultyMedium.svg"
+                  : "/icons/DifficultyHard.svg"
+              } 
+              alt="Difficulty Icon" className="recipe-icon" />
+              <h3>{difficulty}</h3>
+            </div>
+
+            <div className="icon-container">
+              <img src="/icons/RatingIcon.svg" alt="Rating Icon" className="recipe-icon" />
+              <h3>{roundedRating}</h3>
+            </div>
           </div>
           <div className="recipe-details-category-container">
             {categories.map((category, index) => (

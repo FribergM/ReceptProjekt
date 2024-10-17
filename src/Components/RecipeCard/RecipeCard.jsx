@@ -1,11 +1,12 @@
 import React from 'react';
 import './RecipeCard.css';
 import { Link } from "react-router-dom";
+import { scrollToTop } from '../../util';
 
 const RecipeCard = ({ id, image, name, description, rating, categories, timeInMins }) => {
   let roundedRating = rating == null ? null : Math.round(rating * 10) / 10;
   return (
-    <Link to={`/recipe/${id}`}>
+    <Link to={`/recipe/${id}`} onClick={scrollToTop}>
       <div className="recipe-card">
         <img src={`/images/${image}`} alt={name} className="recipe-image" />
         <div className="recipe-info">

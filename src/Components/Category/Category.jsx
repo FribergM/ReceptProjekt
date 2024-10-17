@@ -15,19 +15,32 @@ function Category({categories}) {
     }
 
     const toggleSidebar = () => {
-        setShowCategories(!showCategories);
+        setShowCategories((prev) => !prev);
     };
+    
+    const handleBackgroundClick = () => {
+        if (showCategories) {
+            setShowCategories(false);
+        }
+    }
+
     useEffect (()=> {
         window.addEventListener('resize', resize)
+
+        //Removes the eventlistener if the component unmounts
+        return () => {
+            window.removeEventListener("resize", resize);
+        };
     },[])
 
     return (
         <>
             <div className="sidebar-container">
                 <button onClick={toggleSidebar} className="sidebar-toggle">
-                    {/* Kategorier */}
                     {isMobile ?<FaBars />:"Kategorier"}
                 </button>
+
+                {showCategories && <div className="overlay" onClick={handleBackgroundClick} />}
 
                 <div className={`sidebar ${showCategories ? 'active' : ''}`}>
                     {filteredCategories.map((category,index) =>(

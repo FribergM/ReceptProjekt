@@ -2,6 +2,7 @@ import React from 'react'
 import CardContainer from '../CardContainer/CardContainer';
 import { Link } from "react-router-dom";
 import RecipeCarousel from '../RecipeCarousel/RecipeCarousel';
+import { scrollToTop } from '../../util';
 
 const CategoryPreview = ({recipes, categories}) => {
 
@@ -18,8 +19,8 @@ const CategoryPreview = ({recipes, categories}) => {
                 return (
                     <div key={index} className='page__content-section'>
                         <div className='section-header'>
-                            <Link to={`/categories/${category.name}`}><h2>{category.name}</h2></Link>
-                            <Link to={`/categories/${category.name}`}><button>Se mer</button></Link>
+                            <Link to={`/categories/${category.name}`} onClick={scrollToTop}><h2>{category.name}</h2></Link>
+                            <Link to={`/categories/${category.name}`} onClick={scrollToTop}><button>Se mer</button></Link>
                         </div>
                         <div className='carousel-container'>
                             <RecipeCarousel recipes = {recipesOfCategory}/>

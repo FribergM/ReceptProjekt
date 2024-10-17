@@ -36,3 +36,11 @@ export const calculateRecipeDifficulty = (time, ingredients, instructions) => {
     return "Avancerad";
 }
 
+export const scrollToTop = () => {
+    const headerHeight = document.querySelector('.header-container').offsetHeight;
+    const currentScreenPosition = window.scrollY;
+
+    if(currentScreenPosition > headerHeight){
+        window.scrollTo({top: headerHeight, behavior: 'smooth'});
+    }
+}
