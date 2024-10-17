@@ -13,24 +13,19 @@ function Search(allRecipes) {
         navigate(`/search-result?query=${encodeURIComponent(query)}`);
         setShowInput(false);
     };
+
+    const handleKeyDown =(event => {
+        if(event.key === "Enter") {
+            handleSearch()
+        }
+    })
   
     return(
         <>
             <div className="navbar">
-                <input className="search-input"type="text" placeholder="sök för..." value={query} onChange={(e) =>{setQuery(e.target.value)}} />
-                <button className="search-button" onClick ={handleSearch}>Search</button>
+                <input className="search-input"type="text" placeholder="sök för..." value={query} onChange={(e) =>{setQuery(e.target.value)}} onKeyDown = {handleKeyDown}/>
+                {/* <button className="search-button" onClick ={handleSearch}>Search</button> */}
             </div>
-
-            
-            {/* <div className ="mobile-navbar">
-            <button className="mobile_search-button" onClick= {() => setShowInput(!showInput)}><FaSearch /></button>
-                {showInput && (
-                <div>
-                  <input className="search-input"type="text" placeholder="skriv in recipe namn" value={query} onChange={(e) =>{setQuery(e.target.value)}} />
-                  <button className = "submit-button" onClick={handleSearch}>Search</button>
-                </div>)}
-            </div> */}
-
 
 
             <div className="mobile-navbar">
@@ -48,10 +43,11 @@ function Search(allRecipes) {
                         placeholder="sök för..."
                         value={query}
                         onChange={(e) => setQuery(e.target.value)}
+                        onKeyDown={handleKeyDown}
                     />
-                    <button className="submit-button" onClick={handleSearch}>
+                    {/* <button className="submit-button" onClick={handleSearch}>
                         Search
-                    </button>
+                    </button> */}
                     </div>
                 )}
                 </div>
