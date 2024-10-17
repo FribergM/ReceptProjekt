@@ -61,7 +61,7 @@ const RecipeDetails = ({
             </div>
 
             <div className="icon-container">
-              <img src="/icons/RatingIcon.svg" alt="Rating Icon" className="recipe-icon" />
+              <img src="/icons/starEmpty.svg" alt="Rating Icon" className="recipe-icon" />
               <h3>{roundedRating}</h3>
             </div>
           </div>
