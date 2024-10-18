@@ -4,12 +4,13 @@
   flex-direction: column;
   align-items: center;
   max-width: 50%;
+  padding: 20px;
   flex: 1;
   order: 2;
 }
 
 .star {
-  font-size: 4.5rem;
+  font-size: 3.5rem;
   cursor: pointer;
 }
 
@@ -37,3 +38,11 @@
     max-width: 100%;
   }
 }
+
+@media (max-width: 768px) {
+  .star {
+    font-size: 3rem;
+  }
+}
+
+
