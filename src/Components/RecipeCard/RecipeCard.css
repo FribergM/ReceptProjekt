@@ -51,8 +51,7 @@
 }
 
 .recipe-rating {
-  font-size: 16px;
-  color: #f5a623;
+  display: inline-block;
 }
 
 .recipe-time {
@@ -71,4 +70,20 @@
   padding: 5px 10px;
   border-radius: 5px;
   font-size: 12px;
+}
+
+svg.star {
+  font-size: 0.8em;
+}
+
+.star {  
+  color: #f39c12;    
+}
+
+.star.filled {
+  color: #f39c12;   
+}
+
+.star + .star {
+  margin-left: 4px; 
 }

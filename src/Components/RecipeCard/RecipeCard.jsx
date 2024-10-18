@@ -2,9 +2,19 @@ import React from 'react';
 import './RecipeCard.css';
 import { Link } from "react-router-dom";
 import { scrollToTop } from '../../util';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar as faStarSolid } from "@fortawesome/free-solid-svg-icons";
+import { faStar as faStarRegular } from "@fortawesome/free-regular-svg-icons";
 
 const RecipeCard = ({ id, image, name, description, rating, categories, timeInMins }) => {
-  let roundedRating = rating == null ? null : Math.round(rating * 10) / 10;
+  let roundedRating = rating == null ? 0 : Math.round(rating);
+  const stars = Array.from({ length: 5 }, (_, index) => (
+    <FontAwesomeIcon
+      key={index}
+      icon={index < roundedRating ? faStarSolid : faStarRegular}
+      className={index < roundedRating ? "star filled" : "star"}
+    />
+  ));
   return (
     <Link to={`/recipe/${id}`} onClick={scrollToTop}>
       <div className="recipe-card">
@@ -14,7 +24,7 @@ const RecipeCard = ({ id, image, name, description, rating, categories, timeInMi
           <p className="recipe-description">{description}</p>
           <div className="recipe-meta">
             <div className="recipe-rating">
-              {roundedRating}
+              {stars}
             </div>
             <div className="recipe-time">{timeInMins} min</div>
           </div>
