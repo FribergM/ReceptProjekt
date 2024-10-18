@@ -9,8 +9,9 @@ import './StartPage.css';
 function StartPage({recipes, categories}) {
     return(
         <div className="start-page, page">
-            <Header />
+            
             <NavBar recipes={recipes} categories={categories}/>
+            <Header />
             <main>
                 <CategoryPreview recipes={recipes} categories={categories}/>
             </main>
