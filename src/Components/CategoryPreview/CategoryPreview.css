@@ -1,0 +1,16 @@
+#category-preview-title h2 {
+    border-radius: 50px;
+    border: 1px solid transparent;
+    /* padding: 0 2rem; */
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    
+}
+#category-preview-title h2:hover {
+    text-decoration: underline;
+    transform: scale(1.15);
+}
+
+#category-preview-header{
+    padding: 0 2rem;
+}

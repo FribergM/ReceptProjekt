@@ -30,7 +30,6 @@
     font-weight: bold;
     margin: 10px 0;
     color: beige; 
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
 }
 
 .footer-links {
@@ -45,7 +44,6 @@
     margin: 0 10px;
     text-decoration: none;
     color: beige; 
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
 }
 
 .footer-links a:hover {
