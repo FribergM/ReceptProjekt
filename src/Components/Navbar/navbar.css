@@ -5,9 +5,10 @@
     left: 0;
     width: 100%;
     gap: 0.1em;
-    background-color: #009345;
-    border: 2px solid black;
-    border-radius: 5px;
+    background-color: #236e26;
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
 
 .nav-desk{
