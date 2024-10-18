@@ -1,5 +1,6 @@
 .input-content {
-    display: flex; align-items: center; 
+    display: flex; 
+    align-items: center; 
     position: relative;
     
 }
@@ -8,7 +9,8 @@
     display: flex;
     align-items:center;
     position: absolute;
-    left: 2px;
+    margin-right: 0.5rem;
+    /* left: 2px; */
     padding: 5px;
     color: #888;
 }
@@ -32,9 +34,9 @@
 
 .search-input {
     width: 7rem;
-    padding: 0.6em 1.2em;
+    padding: 0.5em 2em;
     border-radius: 0.5rem;
-    font-size: 1.2em;
+    font-size: 1em;
     background-color: beige;
 }
 
@@ -44,3 +46,27 @@
     }
     
 }
+
+.dropdown-list {
+    display:inline-block;
+    
+    position: absolute;
+    z-index: 1000;
+    width: 90%;
+    margin:10px;
+    margin-top:260px;
+    max-height: 200px;
+    border: 1px solid #ccc;
+    border-radius: 1px;
+    background: white;
+    overflow-y: auto;
+  }
+  
+  .dropdown-list li {
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+  
+  .dropdown-list li:hover {
+    background-color: #f0f0f0;
+  }
