@@ -3,6 +3,9 @@
     display: flex;
     gap: 0.1em;
     background-color: #236e26;
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
 
 .nav-desk{
