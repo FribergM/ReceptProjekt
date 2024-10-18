@@ -37,7 +37,7 @@ function SearchResult ({recipes, query})  {
               {isNum?(<>
               Search: {query}
               <br />
-              Visa alla menyer med denna tillagningstid
+              Visa alla menyer som tillagningstid är {query}min
               </>)
               :(<>
                {
@@ -45,19 +45,19 @@ function SearchResult ({recipes, query})  {
                 (<>
                 Search: {query}
                 <br />
-                Visa alla menyer under dessa categori
+                Visa alla menyer under {query}
                 </>)
                 :(<>
                 Search: {query}
                 <br />
-                Visa alla menyer som sina namn innehåller dessa bokstäver
+                Visa alla menyer som sina namn innehåller {query}
                 </>)
                }
               </>)}
              </h4>
              {filterRecipes.length > 0
              ?<CardContainer recipes = {filterRecipes}/>
-             :"Den här menyn kommer att läggas till snart"}
+             :"Tyvärr har vi inte den här menyn."}
 
         </div>
       </div>
