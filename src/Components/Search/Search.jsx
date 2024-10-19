@@ -7,6 +7,7 @@ import SearchResultPage from "../pages/SearchResultPage";
 
 
 function Search({recipes, categories}) {
+    
     const [query, setQuery] = useState('');
     const[filteredResults, setFilteredResults] = useState([]);
     
@@ -128,7 +129,3 @@ return (
 
 
 export default Search;
-
-
-
-

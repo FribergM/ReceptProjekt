@@ -7,10 +7,11 @@ import './navbar.css'
 
 
 function NavBar({categories, recipes}) {
+  
     return(
       <div className ="navbar nav-desk">
           <Category className = "navbar" categories={categories}/>
-          <Search class ="navbar" recipes = {recipes} categories ={categories} />
+          <Search className ="navbar" recipes = {recipes} categories ={categories} />
         </div>
     )
 
