@@ -10,7 +10,7 @@ function NavBar({categories, recipes}) {
     return(
       <div className ="navbar nav-desk">
           <Category className = "navbar" categories={categories}/>
-          <Search class ="navbar" allRecipes = {recipes} />
+          <Search class ="navbar" recipes = {recipes} categories ={categories} />
         </div>
     )
 

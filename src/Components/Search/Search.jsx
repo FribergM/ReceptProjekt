@@ -1,319 +1,134 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo, useCallback } from "react";
 import { useNavigate } from 'react-router-dom';
 import { FaSearch } from "react-icons/fa";
 import { AiOutlineClose } from "react-icons/ai"; 
 import './Search.css';
+import SearchResultPage from "../pages/SearchResultPage";
 
-function Search(allRecipes) {
-    const [query, setQuery] = useState("");
+
+function Search({recipes, categories}) {
+    const [query, setQuery] = useState('');
+    const[filteredResults, setFilteredResults] = useState([]);
+    
+
     const [showInput, setShowInput] = useState(false);
     const navigate = useNavigate();
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 600);
 
+const nameArr = useMemo(() => recipes.map(recipe => recipe.title.toLowerCase()),[recipes]);
+const timeArr = useMemo(() => recipes.map(recipe => recipe.timeInMins),[recipes]);
+const categoryNameArr = useMemo (() => categories.map(category => category.name.toLowerCase()),[categories]) 
+
+const handleInputChange = useCallback((event) =>{
+    const value = event.target.value.toLowerCase();
+    setQuery(value);
+    if(value) {
+        const nameMatches = nameArr.filter(name => name.includes(value));
+        const timeMatches = timeArr.filter(time => time.toString().includes(value));
+        const categoryMatches = categoryNameArr.filter(categoryName => categoryName.includes(value))
+
+        const combinedResults =[
+            ...nameMatches,
+            ...timeMatches,
+            ...categoryMatches
+        ];
+        const uniqueResults =[...new Set(combinedResults)];
+        setFilteredResults(uniqueResults)
+    }else{
+        setFilteredResults([])
+    }
+},[nameArr, timeArr, categoryNameArr])
+
+
     const handleSearch = () => {
-        console.log("Search for: ", query);
         navigate(`/search-result?query=${encodeURIComponent(query)}`);
         setShowInput(false);
         setQuery("");
-    };
+        setFilteredResults([]);
+    }
 
     const handleKeyDown = (event) => {
-        if (event.key === "Enter") {
+        if(event.key === "Enter") {
             handleSearch();
         }
-    };
+    }
 
-    const resize = () => {
-        setIsMobile(window.innerWidth <= 600);
-    };
+    const handleResultClick = (result)=> {
+        navigate(`/search-result?query=${encodeURIComponent(result)}`);
+        setShowInput(false);
+        setQuery("");
+        setFilteredResults([]);
+        
+    }
 
-    useEffect(() => {
-        window.addEventListener('resize', resize);
-        return () => {
-            window.removeEventListener("resize", resize);
+    const resize = () =>{
+        setIsMobile(window.innerWidth <= 600)
+    }
+
+    useEffect (() =>{
+        window.addEventListener('resize', resize)
+        return ()=> {
+            window.removeEventListener('resize',resize);
         };
-    }, []);
+    },[])
 
     const clearQuery = () => {
-        setQuery(""); 
-    };
+        setQuery("");
+    }
 
-    return (
+
+return (
         
-            <div className="search_knapp">
+    <div className="search_knapp">
 
-                {!showInput ?(
-                    <button className ="search-button" onClick ={()=>setShowInput(true)}>
-                    {isMobile ? <FaSearch /> : "Sök"}
+        {!showInput ?(
+            <button className ="search-button" onClick ={()=>setShowInput(true)}>
+            {isMobile ? <FaSearch /> : "Sök"}
+        </button>
+        ):(
+            <div className = "input-content" >
+            <FaSearch className = "input-icon"  onClick ={handleSearch}/>
+            
+            <input
+                className="search-input"
+                type="text"
+                 placeholder="Sök"
+                value={query}
+                onChange={handleInputChange}
+                onKeyDown={handleKeyDown}
+            />
+            
+            {query && ( 
+                <button 
+                    className="clear-button" 
+                    onClick={clearQuery} 
+                    >
+                    <AiOutlineClose className = "remove-icon"  />
                 </button>
-                ):(
-                    <div className = "input-content" >
-                    <FaSearch className = "input-icon"  onClick ={handleSearch}/>
-                    <input
-                        className="search-input"
-                        type="text"
-                        // placeholder="sök för"
-                        value={query}
-                        onChange={(e) => setQuery(e.target.value)}
-                        onKeyDown={handleKeyDown}
-                    />
-                    {query && ( 
-                        <button 
-                            className="clear-button" 
-                            onClick={clearQuery} 
-                            >
-                            <AiOutlineClose className = "remove-icon"  />
-                        </button>
-                    )}
-                </div>
-                )}
-                
-            </div>
-       
-    );
-}
+            )}
+
+             {filteredResults.length >0 && (
+                <ul className = "search-result">
+                    {filteredResults.map((result, index)=>(
+                        <li key ={index} onClick ={() => handleResultClick(result)}>
+                            {result}
+                        </li>   
+                    ))
+                    }
+                </ul>
+            )}
+        </div>
+        )}
+        
+    </div>
+
+       );
+
+            }
+
 
 export default Search;
 
 
-// import React, { useState, useEffect } from "react";
-// import { useNavigate } from 'react-router-dom';
-// import { FaSearch } from "react-icons/fa";
-// import { AiOutlineClose } from "react-icons/ai"; 
-// import './Search.css';
-
-// function Search(allRecipes) {
-
-//     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
 
-//     const [query, setQuery] = useState("");
-//     const [showInput, setShowInput] = useState(false);
-//     const navigate = useNavigate();
-//     const [isMobile, setIsMobile] = useState(window.innerWidth <= 600);
-
-//     const handleSearch = () => {
-//         console.log("Search for: ", query);
-//         navigate(`/search-result?query=${encodeURIComponent(query)}`);
-//         setShowInput(false);
-//         setIsDropdownOpen(false)
-//         setQuery("");
-//     };
-
-//     const handleKeyDown = (event) => {
-//         if (event.key === "Enter") {
-//             handleSearch();
-//         }
-//     };
-
-//     const resize = () => {
-//         setIsMobile(window.innerWidth <= 600);
-//     };
-
-//     useEffect(() => {
-//         window.addEventListener('resize', resize);
-//         return () => {
-//             window.removeEventListener("resize", resize);
-//         };
-//     }, []);
-
-//     const clearQuery = () => {
-//         setQuery(""); 
-//     };
-
-//     const handleInputChange =(e)=>{
-//         setQuery(e.target.value);
-//         setIsDropdownOpen(e.target.value.length >0);
-//       }
-  
-//       const handleRecipeSelect = (recipe) => {
-//         setQuery(recipe.title);
-//         setIsDropdownOpen(false)
-//       }
-
-//     return (
-//         <>
-//             <div className="search_knapp">
-//                 {isMobile ? 
-//                     <>
-//                         {!showInput ? (
-//                             <button className="mobile_search-button" onClick={() => setShowInput(true)}>
-//                                 <FaSearch />
-//                             </button>
-//                         ) : (
-//                             <div className = "input-content">
-//                                 <FaSearch className = "input-icon" onClick = {handleSearch}/>
-//                                 <input
-//                                     className="search-input"
-//                                     type="text"
-//                                     // placeholder="sök för..."
-//                                     value={query}
-//                                     onChange={handleInputChange}
-//                                     onKeyDown={handleKeyDown}
-                                    
-//                                 />
-//                                 {query && ( 
-//                                     <button 
-//                                         className="clear-button" 
-//                                         onClick={clearQuery}
-//                                         >
-//                                         <AiOutlineClose className = "remove-icon" />
-//                                     </button>
-//                                 )}
-//                             </div>
-//                         )}
-//                     </>
-//                     : (
-//                         <div className = "input-content" >
-//                             <FaSearch className = "input-icon" />
-//                             <input
-//                                 className="search-input"
-//                                 type="text"
-//                                 // placeholder="sök för"
-//                                 value={query}
-//                                 onChange={handleInputChange}
-//                                 onKeyDown={handleKeyDown}
-//                             />
-//                             {query && ( 
-//                                 <button 
-//                                     className="clear-button" 
-//                                     onClick={clearQuery} 
-//                                     >
-//                                     <AiOutlineClose className = "remove-icon"  />
-//                                 </button>
-//                             )}
-//                             {isDropdownOpen && filteredRecipes.length > 0 && (
-//                                 <ul className ="dropdown-list">
-//                                     {filteredRecipes.map(recipe => (
-//                                      <li key={recipe.id} onClick={() => handleRecipeSelect(recipe)}>
-//                                      {recipe.title} - {recipe.timeInMins} min
-//                                      </li>
-//                                       ))
-//                                     }
-//                                 </ul>
-//                             )}
-//                         </div>
-//                     )}
-//             </div>
-//         </>
-//     );
-// }
-
-// export default Search;
-
-
-
-
-
-
-// import React, { useState, useEffect } from "react";
-// import { useNavigate } from 'react-router-dom';
-// import { FaSearch } from "react-icons/fa";
-// import { AiOutlineClose } from "react-icons/ai"; 
-// import './Search.css';
-
-// function Search({ allRecipes }) {
-//     const [query, setQuery] = useState("");
-//     const [showInput, setShowInput] = useState(false);
-//     const [isMobile, setIsMobile] = useState(window.innerWidth <= 600);
-//     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-//     const navigate = useNavigate();
-
-//     const resize = () => {
-//         setIsMobile(window.innerWidth <= 600);
-//     };
-
-//     useEffect(() => {
-//         window.addEventListener('resize', resize);
-//         return () => {
-//             window.removeEventListener("resize", resize);
-//         };
-//     }, []);
-
-//     const clearQuery = () => {
-//         setQuery(""); 
-//         setIsDropdownOpen(false);
-//     };
-
-//     const handleInputChange = (e) => {
-//         const value = e.target.value;
-//         setQuery(value);
-//         setIsDropdownOpen(value.length > 0);
-//     };
-
-//     const handleRecipeSelect = (recipe) => {
-//         setQuery(recipe.title);
-//         setIsDropdownOpen(false);
-//         navigate(`/search-result?query=${encodeURIComponent(recipe.title)}`);
-//     };
-
-//     // 根据 query 过滤食谱
-//     const filteredRecipes = allRecipes.filter(recipe => 
-//         recipe.title.toLowerCase().includes(query.toLowerCase())
-//     );
-
-//     const handleKeyDown = (event) => {
-//         if (event.key === "Enter") {
-//             navigate(`/search-result?query=${encodeURIComponent(query)}`);
-//             setQuery("");
-//             setIsDropdownOpen(false);
-//         }
-//     };
-
-//     return (
-//         <div className="search_knapp">
-//             {isMobile ? 
-//                 <>
-//                     {!showInput ? (
-//                         <button className="mobile_search-button" onClick={() => setShowInput(true)}>
-//                             <FaSearch />
-//                         </button>
-//                     ) : (
-//                         <div className="input-content">
-//                             <FaSearch className="input-icon" onClick={handleKeyDown}/>
-//                             <input
-//                                 className="search-input"
-//                                 type="text"
-//                                 value={query}
-//                                 onChange={handleInputChange}
-//                                 onKeyDown={handleKeyDown}
-//                             />
-//                             {query && ( 
-//                                 <button className="clear-button" onClick={clearQuery}>
-//                                     <AiOutlineClose className="remove-icon" />
-//                                 </button>
-//                             )}
-//                         </div>
-//                     )}
-//                 </>
-//                 : (
-//                     <div className="input-content">
-//                         <FaSearch className="input-icon" />
-//                         <input
-//                             className="search-input"
-//                             type="text"
-//                             value={query}
-//                             onChange={handleInputChange}
-//                             onKeyDown={handleKeyDown}
-//                         />
-//                         {query && ( 
-//                             <button className="clear-button" onClick={clearQuery}>
-//                                 <AiOutlineClose className="remove-icon" />
-//                             </button>
-//                         )}
-//                         {isDropdownOpen && filteredRecipes.length > 0 && (
-//                             <ul className="dropdown-list">
-//                                 {filteredRecipes.map(recipe => (
-//                                     <li key={recipe.id} onClick={() => handleRecipeSelect(recipe)}>
-//                                         {recipe.title} - {recipe.timeInMins} min
-//                                     </li>
-//                                 ))}
-//                             </ul>
-//                         )}
-//                     </div>
-//                 )}
-//         </div>
-//     );
-// }
-
-// export default Search;
