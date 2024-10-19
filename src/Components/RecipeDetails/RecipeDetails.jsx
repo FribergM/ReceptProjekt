@@ -1,6 +1,8 @@
 import React from "react";
 import "./RecipeDetails.css";
 import {useState} from 'react';
+import { Link } from "react-router-dom";
+import { scrollToTop } from "../../util";
 
 const RecipeDetails = ({
   image,
@@ -67,9 +69,11 @@ const RecipeDetails = ({
           </div>
           <div className="recipe-details-category-container">
             {categories.map((category, index) => (
-                <span key={index} className="recipe-details-category">
+              <Link key={index} to={`/categories/${category}`} onClick={scrollToTop} className="recipe-details-category" >
+                <span>
                   {category}
                 </span>
+              </Link>
             ))}
           </div>
           
