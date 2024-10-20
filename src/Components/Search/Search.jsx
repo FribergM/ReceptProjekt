@@ -33,7 +33,11 @@ const handleInputChange = useCallback((event) =>{
             ...timeMatches,
             ...categoryMatches
         ];
-        const uniqueResults =[...new Set(combinedResults)];
+
+        const sortedResults = combinedResults.sort((a,b) => a.localeCompare(b));
+
+        // const uniqueResults =[...new Set(combinedResults)];
+        const uniqueResults =[...new Set(sortedResults)];
         setFilteredResults(uniqueResults)
     }else{
         setFilteredResults([])
@@ -119,13 +123,10 @@ return (
                 </ul>
             )}
         </div>
-        )}
-        
+        )}       
     </div>
-
        );
-
-            }
+    }
 
 
 export default Search;
