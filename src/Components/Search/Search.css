@@ -1,4 +1,4 @@
-.input-content {
+/* .input-content {
     display: flex; 
     align-items: center; 
     position: relative; 
@@ -9,7 +9,7 @@
     align-items: center;
     position: absolute;
     margin: 0 0.5rem;
-    /* left: 2px; */
+    
     padding: 5px;
     color: #888;
 }
@@ -40,12 +40,110 @@
     background-color: beige;
     border-radius: 2rem;
     border: 1px solid transparent
-
 }
+
 
 @media (min-width: 600px) {
     .search-input {
         width: 12rem; 
+    }
+
+    .search-button {
+        background-color: #236e26;
+    }
+}
+
+.search-result {
+    list-style-type: none; 
+    padding: 0; 
+    margin: 0; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    background: white; 
+    position: absolute; 
+    width: 100%; 
+    z-index: 1000; 
+    max-height: 200px; 
+    overflow-y: auto; 
+    top: 100%; 
+}
+
+.search-result li {
+    padding: 10px; 
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+}
+
+.search-result li:hover {
+    background-color: #f0f0f0; 
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.input-content {
+    display: flex; 
+    align-items: center; 
+    position: relative; 
+}
+
+.input-icon {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    margin: 0 0.5rem;
+    
+    padding: 5px;
+    color: #888;
+}
+
+.clear-button {
+    position: absolute;
+    right: 1px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    margin: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.remove-icon {
+    color: #888;
+}
+
+.search-input {
+
+    width: 7rem;
+    padding: 0.5em 2em;
+    border-radius: 0.5rem;
+    font-size: 1em;
+    background-color: beige;
+    border-radius: 2rem;
+    border: 1px solid transparent
+}
+
+
+@media (min-width: 600px) {
+    .search-input { 
+        width: 100%;
+        max-width: 12rem; 
+    }
+
+    .search-button {
+        background-color: #009345;
     }
 }
 
@@ -73,5 +171,6 @@
 .search-result li:hover {
     background-color: #f0f0f0; 
 }
+
 
 
