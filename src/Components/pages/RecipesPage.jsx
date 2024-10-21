@@ -36,8 +36,8 @@ function RecipesPage({ recipes, categories }) {
 
   return (
     <div className="recipe-page, page">
-      <Header />
       <NavBar recipes={recipes} categories={categories} />
+      <Header />
       <main>
         <div className="recipe-page-container">
           <RecipeDetails
