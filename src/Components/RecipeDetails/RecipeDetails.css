@@ -214,16 +214,9 @@ li input[type="checkbox"]:checked::after {
   }
 
   .recipe-details-image {
-    margin-bottom: 1.5rem;
-    max-width: 100%;
+   
+    margin-top: 1rem;
+    max-width: 70%;
   }
 }
-@media (max-width: 400px) {
-  .recipe-details-top-right {
-    padding: 0 1rem;
-   }
 
-  .recipe-details-category-container {
-    gap: 0.5rem;
-  }
-}

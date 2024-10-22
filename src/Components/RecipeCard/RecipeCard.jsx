@@ -26,7 +26,10 @@ const RecipeCard = ({ id, image, name, description, rating, categories, timeInMi
             <div className="recipe-rating">
               {stars}
             </div>
-            <div className="recipe-time">{timeInMins} min</div>
+            <div className="recipe-time">
+              <img src="/icons/TimeIcon.svg" alt="Time Icon" className="recipe-icon" />
+              <p>{timeInMins} min</p>
+            </div>
           </div>
           <div className="recipe-categories">
             {categories.map((category, index) => (

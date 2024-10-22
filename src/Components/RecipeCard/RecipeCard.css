@@ -57,6 +57,8 @@
 .recipe-time {
   font-size: 14px;
   color: #777;
+  display: flex;
+  justify-content: center;
 }
 
 .recipe-categories {
@@ -86,4 +88,12 @@ svg.star {
 
 .star + .star {
   margin-left: 4px; 
+}
+
+.recipe-time img {
+  width: 1rem;
+}
+
+.recipe-time p {
+  margin: 2px 0 0 4px;
 }
