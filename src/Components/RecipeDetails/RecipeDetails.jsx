@@ -3,6 +3,7 @@ import "./RecipeDetails.css";
 import {useState} from 'react';
 import { Link } from "react-router-dom";
 import { scrollToTop } from "../../util";
+import StarRating from "../Rating/StarRating";
 
 const RecipeDetails = ({
   image,
@@ -15,8 +16,6 @@ const RecipeDetails = ({
   ingredients,
   instructions,
 }) => {
-  let roundedRating = rating == null ? null : Math.round(rating * 10) / 10;
-
   const [checkedIngredients, setCheckedIngredients] = useState(Array(ingredients.length).fill(false));
   const [checkedInstructions, setCheckedInstructions] = useState(Array(instructions.length).fill(false));
 
@@ -31,6 +30,7 @@ const RecipeDetails = ({
     newCheckedState[index] = !newCheckedState[index]; 
     setCheckedInstructions(newCheckedState);
   };
+
   return (
     <div className="recipe-details-container">
       <div className="recipe-details-top">
@@ -62,11 +62,15 @@ const RecipeDetails = ({
               <h3>{difficulty}</h3>
             </div>
 
-            <div className="icon-container">
+            {/* <div className="icon-container">
               <img src="/icons/starEmpty.svg" alt="Rating Icon" className="recipe-icon" />
               <h3>{roundedRating}</h3>
-            </div>
+            </div> */}
+            
           </div>
+            <div className="star-container">
+              <StarRating rating={rating}/>
+            </div>
           <div className="recipe-details-category-container">
             {categories.map((category, index) => (
               <Link key={index} to={`/categories/${category}`} onClick={scrollToTop} className="recipe-details-category" >
@@ -113,7 +117,7 @@ const RecipeDetails = ({
                   onChange={() => handleInstructionChange(index)}
                 />
                 <label htmlFor={`instruction-${index}`}>{`${index + 1}. ${instruction}`}</label>
-                </li>
+              </li>
             ))}
           </ul>
         </div>
