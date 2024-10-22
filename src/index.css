@@ -71,7 +71,7 @@ button:hover {
   margin: 1rem;
   padding: 1rem;
   border: 2px solid #dddddd;
-  border-radius: 10px;
+  border-radius: 0.5rem;
   background-color: rgb(255, 255, 240);
   /* background-color: rgb(223, 223, 200); */
   /* background-color: white; */
