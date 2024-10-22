@@ -34,11 +34,19 @@ const handleInputChange = useCallback((event) =>{
             ...categoryMatches
         ];
 
-        const sortedResults = combinedResults.sort((a,b) => a.localeCompare(b));
+        const uniqueResults =[...new Set(combinedResults)];
 
-        // const uniqueResults =[...new Set(combinedResults)];
-        const uniqueResults =[...new Set(sortedResults)];
-        setFilteredResults(uniqueResults)
+        const sortedResult = uniqueResults.sort((a,b) => {
+            if(typeof a === 'number' && typeof b ==='number') {
+                return a-b;
+            }
+            if(typeof a === 'string' && typeof b ==='string') {
+                return a.localeCompare(b);
+            }
+            return typeof a === 'number' ? -1 : 1;
+        });
+
+        setFilteredResults(sortedResult)
     }else{
         setFilteredResults([])
     }

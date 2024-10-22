@@ -15,7 +15,7 @@ function CategoryPage({recipes,categories}) {
     return (
          <div className = "category-page, page">
             
-            <NavBar categories={categories} recipes = {recipes}showHomeButton={true}/>
+            <NavBar categories={categories} recipes = {recipes} showHomeButton={true}/>
             <Header />
             <main>
                 <div className="page__content-wrapper">
