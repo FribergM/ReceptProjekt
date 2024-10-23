@@ -18,7 +18,7 @@
     padding: 0.8rem 1.2rem;
     font-size: 16px;
     border: 1px solid #ccc;
-    border-radius: 25px;
+    border-radius: 0.5rem;
     box-sizing: border-box; 
     margin-bottom: 10px;
 }
@@ -42,8 +42,6 @@
 
 .comment__form-button {
     /* width: 100%; */
-    border-radius: 25px;
-    /* background-color: #fffff0; */
     border: 1px solid #ccc;
 }
 
