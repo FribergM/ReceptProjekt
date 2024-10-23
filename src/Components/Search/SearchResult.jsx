@@ -23,32 +23,32 @@ function SearchResult ({recipes, query})  {
     return (
       <div className="searched-recipes, page__content-wrapper">
         <div className ="page__content-section">
-          <h2>Result</h2>
+          <h2>Sökresultat</h2>
              <h4>
               {isNum?(<>
-              Search: {query}
+              Sökord: {query}
               <br />
-              Visa alla menyer som tillagningstid är {query}min
+              Visar alla recept vars tillagningstid är {query} min
               </>)
               :(<>
                {
                 categoriesMatchQuery.length>0?
                 (<>
-                Search: {query}
+                Sökord: {query}
                 <br />
-                Visa alla menyer under {query}
+                Visar alla recept under {query}
                 </>)
                 :(<>
-                Search: {query}
+                Sökord: {query}
                 <br />
-                Visa alla menyer som sina namn innehåller {query}
+                Visar alla recept vars namn innehåller {query}
                 </>)
                }
               </>)}
              </h4>
              {filterRecipes.length > 0
              ?<CardContainer recipes = {filterRecipes}/>
-             :"Tyvärr har vi inte den här menyn."}
+             :"Tyvärr har vi inget matchande recept."}
 
         </div>
       </div>

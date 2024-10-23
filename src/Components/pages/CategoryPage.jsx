@@ -21,7 +21,7 @@ function CategoryPage({recipes,categories}) {
                 <div className="page__content-wrapper">
                     <div className="page__content-section">
                         <div className="section-header">
-                            <h2>{category} Menu</h2>
+                            <h2>{category}</h2>
                         </div>
                         <CardContainer recipes={filteredRecipes}/>
                     </div>
