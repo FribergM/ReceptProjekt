@@ -16,7 +16,7 @@
     background-position: center;
     
     display:flex;
-    height: 25vh;
+    height: 18vh;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -60,18 +60,21 @@
         padding-bottom: 0;
     }
     .header {
-        height: 25vh; 
+        height: 21vh; 
         justify-content: left; 
         text-align: start;
     }
     .header-text{
         padding-left: 10%;
+        max-width: 100%;
+        max-height: 100%;
     }
     .header__name {
-        font-size:10rem;
+        font-size:12vh;
+        line-height: 12vh;
     }
     .header__slogan{
-        font-size: 4rem;
+        font-size: 3vh;
         display:block;
     }
     
