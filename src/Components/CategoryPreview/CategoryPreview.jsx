@@ -7,7 +7,7 @@ import './CategoryPreview.css';
 
 const CategoryPreview = ({recipes, categories}) => {
 
-    const mainCategories = categories.slice(0,3);
+    const mainCategories = categories.slice(0,8);
 
     const getRecipesByCategory = (category) => {
         return recipes.filter(recipe => recipe.categories.includes(category));
