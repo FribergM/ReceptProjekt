@@ -231,9 +231,9 @@ li input[type="checkbox"]:checked::after {
   }
 
   .recipe-details-image {
-   
     margin-top: 1rem;
     max-width: 70%;
+    max-height: 250px;
   }
 }
 
