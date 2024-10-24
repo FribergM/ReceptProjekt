@@ -6,7 +6,5 @@
 }
 .comment-container button {
     margin: 1rem 0;
-    border-radius: 25px;
-    /* background-color: #fffff0; */
     border: 1px solid #ccc;
 }
