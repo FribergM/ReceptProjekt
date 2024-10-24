@@ -1,5 +1,6 @@
 import React from "react";
 import CardContainer from "../CardContainer/CardContainer";
+import './SearchResult.css';
 
 function SearchResult ({recipes, query})  {
   const lowcaseQuery = query.toLowerCase()
@@ -23,32 +24,32 @@ function SearchResult ({recipes, query})  {
     return (
       <div className="searched-recipes, page__content-wrapper">
         <div className ="page__content-section">
-          <h2>Sökresultat</h2>
-             <h4>
+          <h2 className ="section-header">Sökresultat</h2>
+             <h4 className ="search-result-text">
               {isNum?(<>
-              Sökord: {query}
-              <br />
-              Visar alla recept vars tillagningstid är {query} min
+              {/* Sökord: {query}
+              <br /> */}
+              Visar alla recept vars tillagningstid är: '{query} min'
               </>)
               :(<>
                {
                 categoriesMatchQuery.length>0?
                 (<>
-                Sökord: {query}
-                <br />
-                Visar alla recept under {query}
+                {/* Sökord: {query}
+                <br /> */}
+                Visar alla recept under kategori: '{query}'
                 </>)
                 :(<>
-                Sökord: {query}
-                <br />
-                Visar alla recept vars namn innehåller {query}
+                {/* Sökord: {query}
+                <br /> */}
+                Visar alla recept vars namn innehåller: '{query}'
                 </>)
                }
               </>)}
              </h4>
              {filterRecipes.length > 0
              ?<CardContainer recipes = {filterRecipes}/>
-             :"Tyvärr har vi inget matchande recept."}
+             :<p className="no-search-result">Tyvärr har vi inget matchande recept.</p>}
 
         </div>
       </div>
