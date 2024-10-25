@@ -17,7 +17,6 @@ function RecipesPage({ recipes, categories }) {
   const fetchComments = async() => {
     const fetchedComments = await fetchData(import.meta.env.VITE_API_URL + `/recipes/${recipeId}/comments`);
     setComments(fetchedComments);
-    console.log(fetchedComments)
   }
 
   const addComment = (newComment) => {
@@ -25,7 +24,6 @@ function RecipesPage({ recipes, categories }) {
 };
 
   useEffect(() => {
-    console.log("Fetching comments...")
     fetchComments();
   }, [])
 

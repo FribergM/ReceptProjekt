@@ -1,5 +1,5 @@
 export const sortCategories = (categories) => {
-    const newCategoryOrder = ['Förrätter', 'Varmrätter', 'Desserter', 'Billigt', 'Långkok', 'Lägglagat', 'Lyxigt', 'Snabblagat', 'Somrigt', 'Vegetariskt']
+    const newCategoryOrder = ['Förrätter', 'Varmrätter', 'Desserter', 'Billigt', 'Långkok', 'Lyxigt', 'Somrigt', 'Vegetariskt']
 
     const sortedCategories = [...categories].sort((a,b) => {
 
