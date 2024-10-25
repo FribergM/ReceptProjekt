@@ -102,7 +102,8 @@ return (
 
         {!showInput ?(
             <button className ="search-button" onClick ={()=>setShowInput(true)}>
-            {isMobile ? <FaSearch /> : "Sök"}
+            {/* {isMobile ? <FaSearch /> : "Sök"} */}
+            {<FaSearch />}
         </button>
         ):(
             <div className = "input-content" >
