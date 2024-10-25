@@ -19,7 +19,7 @@ function SearchResult({ recipes, query }) {
   // const combinedMatchedRecipes = [...new Set([...nameMatchRecipes, ...ingredientMatchRecipes])];
 
   let filterRecipes;
-  let resultMessage = "Tyvärr har vi inget matchande recept."; // 默认消息
+  let resultMessage = "Tyvärr har vi inget matchande recept."; 
 
   if (isNum) {
     filterRecipes = timeMatchRecipes;
