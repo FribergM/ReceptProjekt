@@ -42,19 +42,19 @@ function SearchResult({ recipes, query }) {
   return (
     <div className="searched-recipes page__content-wrapper">
       <div className="page__content-section">
-        <h2>Sökresultat</h2>
-        <h4>
+        <div className="section-header">
+          <h2>Sökresultat</h2>
+        </div>
+        <h4 className="search-result-text">
           Sökord: {query}
           <br />
           {resultMessage}
         </h4>
-        {filterRecipes && filterRecipes.length > 0 ? (
+        {filterRecipes && filterRecipes.length > 0 && (
           <>
-            <h4>Visar alla matchande recept:</h4>
+            <h4 className="search-result-text">Visar alla matchande recept:</h4>
             <CardContainer recipes={filterRecipes} />
           </>
-        ) : (
-          "Tyvärr har vi inget matchande recept."
         )}
       </div>
     </div>
