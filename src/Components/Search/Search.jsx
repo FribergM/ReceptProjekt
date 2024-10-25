@@ -20,6 +20,10 @@ const nameArr = useMemo(() => recipes.map(recipe => recipe.title.toLowerCase()),
 const timeArr = useMemo(() => recipes.map(recipe => recipe.timeInMins),[recipes]);
 const categoryNameArr = useMemo (() => categories.map(category => category.name.toLowerCase()),[categories]) 
 
+const ingredientArr = useMemo(() => {
+    return [...new Set(recipes.map(recipe => recipe.ingredients.map(ingredient => ingredient.name.toLowerCase())).flat())];},[recipes])
+//  console.log('ingredients', ingredientsArr);
+
 const handleInputChange = useCallback((event) =>{
     const value = event.target.value.toLowerCase();
     setQuery(value);
@@ -27,11 +31,13 @@ const handleInputChange = useCallback((event) =>{
         const nameMatches = nameArr.filter(name => name.includes(value));
         const timeMatches = timeArr.filter(time => time.toString().includes(value));
         const categoryMatches = categoryNameArr.filter(categoryName => categoryName.includes(value))
+        const ingredientMatches = ingredientArr.filter(ingredient => ingredient.includes(value));
 
         const combinedResults =[
             ...nameMatches,
             ...timeMatches,
-            ...categoryMatches
+            ...categoryMatches,
+            ...ingredientMatches
         ];
 
         const uniqueResults =[...new Set(combinedResults)];
