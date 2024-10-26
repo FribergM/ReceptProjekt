@@ -79,6 +79,8 @@ import CommentContainer from "../CommentContainer/CommentContainer";
 import "./RecipesPage.css";
 import { fetchData } from "../../api";
 import PrintRecipe from "../RecipeShare/PrintRecipe";
+import RecipeShare from "../RecipeShare/RecipeShare";
+
 
 
 function RecipesPage({ recipes, categories }) {
@@ -120,8 +122,9 @@ function RecipesPage({ recipes, categories }) {
             ingredients={recipe.ingredients}
             instructions={recipe.instructions}
             />
-          <div className = "print">
+          <div className = "print_and_share">
             <PrintRecipe />
+            <RecipeShare />
           </div>
           <div className="rating-comment-container">
             <Rating id={recipeId}/>

@@ -8,7 +8,7 @@
     .navbar {
         display: none;
     }
-    .print {
+    .print-button{
         display: none;
     }
     .comment-container {
@@ -16,13 +16,12 @@
     }
 }
 
-
-.print {
+.print_and_share {
     display:flex;
     justify-content: end;
-    
 }
 
+/*print-button for båda skrivut_icon och dela_icon*/
 .print-button {
     background-color: transparent !important;
     border: none;
