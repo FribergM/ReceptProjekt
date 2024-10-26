@@ -1,0 +1,35 @@
+@media print{
+    .rating-comment-container{
+        display: none;
+    }
+    .header-link {
+        display: none;
+    }
+    .navbar {
+        display: none;
+    }
+    .print {
+        display: none;
+    }
+    .comment-container {
+        display: none;
+    }
+}
+
+
+.print {
+    display:flex;
+    justify-content: end;
+    
+}
+
+.print-button {
+    background-color: transparent !important;
+    border: none;
+}
+
+.print-icon {
+    margin-right: 8px;
+    color: #009345;
+    background-color: none;
+}
