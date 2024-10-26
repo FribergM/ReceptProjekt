@@ -59,11 +59,25 @@ const handleInputChange = useCallback((event) =>{
 },[nameArr, timeArr, categoryNameArr])
 
 
+    // const handleSearch = () => {
+    //     navigate(`/search-result?query=${encodeURIComponent(query)}`);
+    //     setShowInput(false);
+    //     setQuery("");
+    //     setFilteredResults([]);
+    // }
+
     const handleSearch = () => {
-        navigate(`/search-result?query=${encodeURIComponent(query)}`);
+        if(query) {
+            navigate(`/search-result?query=${encodeURIComponent(query)}`);
         setShowInput(false);
         setQuery("");
         setFilteredResults([]);
+
+        }else {
+            setShowInput(false);
+ 
+        }
+        
     }
 
     const handleKeyDown = (event) => {
