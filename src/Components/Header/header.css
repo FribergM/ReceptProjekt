@@ -34,11 +34,12 @@
 
 .header-logo {
     width: 100%;
-    height: 100%;
+    max-height: 100%;
 }
 
 .header-logo-container {
     max-width: 100%;
+    max-height: 100%;
 }
 
 /*.header__name {
@@ -88,8 +89,7 @@
     }*/
 
     .header-logo {
-        padding-left: 15%;
-        max-width: 100%;
+        padding-left: 25%;
     }
     
 }
