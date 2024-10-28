@@ -27,8 +27,8 @@ const RecipeShare = () => {
           <div className="popup-content">
             <span className="close" onClick={togglePopup}>&times;</span>
             <input type="text" value={currentLink} readOnly />
-            <button onClick={copyToClipboard}>
-                <FaCopy className='copy-icon'/>
+            <button onClick={copyToClipboard} className='copy-icon'>
+                <FaCopy />
             </button>
           </div>
         </div>
