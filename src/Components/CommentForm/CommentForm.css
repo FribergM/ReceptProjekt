@@ -10,7 +10,7 @@
     margin-bottom: 15px;
 }
 
-#comment__form-name,
+.comment__form-name,
 .comment__form-text {
     font-family: "Lora", serif;
     width: 100%;
@@ -21,15 +21,27 @@
     border-radius: 0.5rem;
     box-sizing: border-box; 
     margin-bottom: 10px;
+    height: 3rem;
 }
 .comment__form-success {
     text-align: center;
     margin-top: 40px;
 }
+.comment__form-name {
+    display: none;
+}
 
 .comment__form-text {
-    height: 11rem;
     resize: none;
+    transition: height 0.3s ease;
+}
+
+.comment__form-text--expanded {
+    height: 11rem;
+}
+
+.comment__form-name--visible {
+    display: block;
 }
 
 .comment__form-checkbox{
@@ -41,8 +53,12 @@
     transform: scale(0.8);
 }
 
+.comment__form-button-container {
+    display: flex;
+    gap: 0.5rem;
+}
+
 .comment__form-button {
-    /* width: 100%; */
     border: 1px solid #ccc;
 }
 
@@ -80,10 +96,4 @@
 .comment__form label{
     display:flex;
     align-items: center;
-}
-
-@media screen and (min-width: 600px) {
-    .comment__form-button{
-        width: auto;
-    }
 }
