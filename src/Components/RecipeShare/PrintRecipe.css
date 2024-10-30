@@ -1,0 +1,34 @@
+@media print{
+    .rating-comment-container{
+        display: none;
+    }
+    .header-link {
+        display: none;
+    }
+    .navbar {
+        display: none;
+    }
+    .print-button{
+        display: none;
+    }
+    .comment-container {
+        display: none;
+    }
+}
+
+.print_and_share {
+    display:flex;
+    justify-content: end;
+}
+
+/*print-button for båda skrivut_icon och dela_icon*/
+.print-button {
+    background-color: transparent !important;
+    border: none;
+}
+
+.print-icon {
+    margin-right: 8px;
+    color: #009345;
+    background-color: none;
+}

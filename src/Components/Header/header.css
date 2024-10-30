@@ -11,12 +11,11 @@
 }
 .header {
     position:relative;
-    background-image: url('/images/MangiaHeader.webp');
     background-size:cover;
     background-position: center;
-    
+    background-color: #009345;
     display:flex;
-    height: 18vh;
+    height: 13vh;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -25,21 +24,32 @@
     justify-content: center; 
     overflow:hidden;
 }
-.header-text > * {
+/*.header-text > * {
     font-family: 'Cinzel, serif';
     color: #FAC710;
     margin: 0; 
     text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.8);
 
+}*/
+
+.header-logo {
+    width: 100%;
+    max-height: 100%;
 }
-.header__name {
+
+.header-logo-container {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/*.header__name {
     font-size: 4rem;
 }
 
 .header__slogan {
     display:none;
     font-size: 2rem;
-}
+}*/
 
 .header-link{
     width: 100%;
@@ -60,11 +70,11 @@
         padding-bottom: 0;
     }
     .header {
-        height: 21vh; 
+        height: 13vh; 
         justify-content: left; 
         text-align: start;
     }
-    .header-text{
+    /*.header-text{
         padding-left: 10%;
         max-width: 100%;
         max-height: 100%;
@@ -76,6 +86,10 @@
     .header__slogan{
         font-size: 3vh;
         display:block;
+    }*/
+
+    .header-logo {
+        padding-left: 25%;
     }
     
 }

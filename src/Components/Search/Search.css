@@ -33,7 +33,8 @@
 
 .search-input {
 
-    width: 7rem;
+    width: 10rem;
+    max-width: 10rem;
     padding: 0.5em 2em;
     border-radius: 0.5rem;
     font-size: 1em;
@@ -43,10 +44,10 @@
 }
 
 
-@media (min-width: 600px) {
+@media (min-width: 1050px) {
     .search-input { 
         width: 100%;
-        max-width: 12rem; 
+        /* max-width: 12rem;  */
     }
 
     .search-button {
@@ -62,8 +63,8 @@
     border-radius: 4px; 
     background: white; 
     position: absolute; 
-    width: 88%; 
-    left: 6%;
+    width: 96%; 
+    left: 2%;
     z-index: 1000; 
     max-height: 200px; 
     overflow-y: auto; 
