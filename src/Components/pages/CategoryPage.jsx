@@ -4,7 +4,6 @@ import CardContainer from '../CardContainer/CardContainer';
 import NavBar from '../Navbar/Navbar';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
-import './CategoryPage.css';
 
 function CategoryPage({recipes,categories}) {
     const {category} = useParams();
