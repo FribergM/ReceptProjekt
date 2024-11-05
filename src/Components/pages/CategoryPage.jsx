@@ -9,8 +9,6 @@ import './CategoryPage.css';
 function CategoryPage({recipes,categories}) {
     const {category} = useParams();
     const filteredRecipes = recipes.filter(recipe => recipe.categories.includes(category));
-    //console.log("filted recipes:",filteredRecipes)
-    //console.log("categories:", recipes.categories)
 
     return (
          <div className = "category-page, page">

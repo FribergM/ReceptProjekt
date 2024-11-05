@@ -35,7 +35,6 @@ const CommentForm = ({ id, addComment }) => {
             [name]: type === 'checkbox' ? checked : value
         }));
     }
-    // console.log(form)
 
     const handleSubmit = async (e) => {
         e.preventDefault();

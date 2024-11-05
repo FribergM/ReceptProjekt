@@ -3,8 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { FaSearch } from "react-icons/fa";
 import { AiOutlineClose } from "react-icons/ai"; 
 import './Search.css';
-import SearchResultPage from "../pages/SearchResultPage";
-
 
 function Search({recipes, categories}) {
     
@@ -22,7 +20,6 @@ const categoryNameArr = useMemo (() => categories.map(category => category.name.
 
 const ingredientArr = useMemo(() => {
     return [...new Set(recipes.map(recipe => recipe.ingredients.map(ingredient => ingredient.name.toLowerCase())).flat())];},[recipes])
-//  console.log('ingredients', ingredientsArr);
 
 const handleInputChange = useCallback((event) =>{
     const value = event.target.value.toLowerCase();
@@ -57,15 +54,6 @@ const handleInputChange = useCallback((event) =>{
         setFilteredResults([])
     }
 },[nameArr, timeArr, categoryNameArr])
-
-
-    // const handleSearch = () => {
-    //     navigate(`/search-result?query=${encodeURIComponent(query)}`);
-    //     setShowInput(false);
-    //     setQuery("");
-    //     setFilteredResults([]);
-    // }
-
     const handleSearch = () => {
         if(query) {
             navigate(`/search-result?query=${encodeURIComponent(query)}`);

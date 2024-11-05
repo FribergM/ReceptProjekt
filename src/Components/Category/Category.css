@@ -1,7 +1,6 @@
 
   .category-container {
     position: relative;
-    /* width: 70%; */
   }
   
   .sidebar {
@@ -10,7 +9,6 @@
     flex-direction: column;
     left: -110vw; 
     width: 100vw;
-    /* height: 80vh; */
     height: calc(100vh - 54px);
     background-color: #333;
     background-color: #FFFFFF;
@@ -18,7 +16,6 @@
     z-index: 1000;
     margin-top: 0.5rem;
     box-shadow: 3px 3px 5px rgba(0,0,0,0.5);
-    /* overflow-y: auto; */
   }
   .sidebar-header{
     padding: 1rem;
@@ -83,11 +80,6 @@
     overflow-x: hidden; 
     scroll-behavior: smooth; 
     white-space: nowrap; 
-    /* margin-left: 5px;
-    margin-right: 5px; */
-    /* padding: 10px; */
-    /* padding-left: 3rem; */
-    /* padding-left: 8%; */
     flex-grow: 1;
     max-width: 100%; 
 }
@@ -112,8 +104,6 @@
     background: none;
     border: none;
     cursor: pointer;
-    /* font-size: 20px;
-    margin: 0 5px; */
 }
 
 .category-menu:hover  .scroll-button {
