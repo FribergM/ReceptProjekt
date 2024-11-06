@@ -77,27 +77,12 @@
     max-width: 400px;
     text-align: center;
 }
+.modal-content p {
+    color: black;
+}
 
 .close-button {
-    background-color: beige;
-    color: black;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.close-button:hover {
-    border: 2px solic white;
-}
-
-.policy-content {
-    background-color: beige;
-    padding: 20px;
-    border-radius: 8px;
-    width: 80%;
-    max-width: 400px;
-    text-align: center;
+    border: 1px solid #ccc;
 }
 
 @media screen and (min-width: 25rem) {

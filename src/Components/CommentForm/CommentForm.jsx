@@ -1,24 +1,41 @@
+//Trello id:11
 import React from 'react';
 import { useState } from 'react'
 import './CommentForm.css'
 import { postData } from '../../api';
 
-const CommentForm = ({id, addComment}) => {
+const CommentForm = ({ id, addComment }) => {
     const [form, setForm] = useState({
         comment: "",
         name: "",
         isAnonymous: false,
         isSubmitted: false,
+        isFocused: false,
     })
 
+    const handleFocus = () => {
+        setForm(prev => ({
+            ...prev,
+            isFocused: true
+        }));
+    };
+    const resetForm = () => {
+        setForm({
+            comment: "",
+            name: "",
+            isAnonymous: false,
+            isSubmitted: false,
+            isFocused: false,
+        });
+    }
+
     const handleChange = (e) => {
-        const {name, type, value, checked} = e.target;
+        const { name, type, value, checked } = e.target;
         setForm(prev => ({
             ...prev,
             [name]: type === 'checkbox' ? checked : value
         }));
     }
-    // console.log(form)
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -28,25 +45,24 @@ const CommentForm = ({id, addComment}) => {
             isSubmitted: true
         }));
 
-        // const success = await postComment();
-        const newComment =  await postData(import.meta.env.VITE_API_URL + `/recipes/${id}/comments`,{
+        const newComment = await postData(import.meta.env.VITE_API_URL + `/recipes/${id}/comments`, {
             name: form.isAnonymous ? 'Anonym' : form.name,
             comment: form.comment
         })
         console.log(newComment);
 
         //Resets state if comment post fails.
-        if(newComment) {
+        if (newComment) {
             addComment(newComment);
-        }else{
+        } else {
             setForm(prev => ({
                 ...prev,
                 isSubmitted: false
             }));
         }
-        
+
     }
-    
+
     return (
         <div className='comment__form-container'>
 
@@ -58,37 +74,47 @@ const CommentForm = ({id, addComment}) => {
                 <form onSubmit={handleSubmit} className='comment__form'>
                     <h2>Kommentera eller fråga</h2>
                     <textarea
-                        className='comment__form-text'
+                        className={`comment__form-text ${form.isFocused ? 'comment__form-text--expanded' : ''}`}
                         onChange={handleChange}
+                        onFocus={handleFocus}
                         name="comment"
                         placeholder='Skriv en kommentar'
                         maxLength="365"
                         wrap='soft'
+                        value={form.comment}
                         required
-                        />
-                    <input
-                        id='comment__form-name'
-                        className=''
-                        type="text"
-                        onChange={handleChange}
-                        name="name"
-                        placeholder='Namn'
-                        maxLength="30"
-                        required={!form.isAnonymous}
-                        />
-                    <div>
-                        <label className='comment__form-checkbox'>
+                    />
+                    {form.isFocused && (
+                        <>
                             <input
-                                type="checkbox"
+                                id='comment__form-name'
+                                className={`comment__form-name ${form.isFocused ? 'comment__form-name--visible' : ''}`}
+                                type="text"
                                 onChange={handleChange}
-                                name="isAnonymous"
-                                />
-                            Skicka anonymt
-                        </label>
-                    </div>
-                    
-                    
-                    <button className="comment__form-button" type="submit">Skicka in</button>
+                                name="name"
+                                placeholder='Namn'
+                                maxLength="30"
+                                value={form.name}
+                                required={!form.isAnonymous}
+                            />
+                            <div>
+                                <label className='comment__form-checkbox'>
+                                    <input
+                                        type="checkbox"
+                                        onChange={handleChange}
+                                        name="isAnonymous"
+                                        checked={form.isAnonymous}
+                                    />
+                                    Skicka anonymt
+                                </label>
+                            </div>
+
+                            <div className='comment__form-button-container'>
+                                <button className="comment__form-button" type="submit">Skicka in</button>
+                                <button className="comment__form-button" type="button" onClick={resetForm}>Avbryt</button>
+                            </div>
+                        </>
+                    )} 
                 </form>
             )}
         </div>

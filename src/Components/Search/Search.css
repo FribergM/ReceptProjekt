@@ -47,7 +47,6 @@
 @media (min-width: 1050px) {
     .search-input { 
         width: 100%;
-        /* max-width: 12rem;  */
     }
 
     .search-button {

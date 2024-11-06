@@ -1,10 +1,8 @@
-import React, {useState, useEffect} from "react";
-import { Link } from "react-router-dom"
+//Trello id:7
+import React from "react";
 import Category from "../Category/Category";
 import Search from "../Search/Search";
 import './navbar.css'
-
-
 
 function NavBar({categories, recipes}) {
   

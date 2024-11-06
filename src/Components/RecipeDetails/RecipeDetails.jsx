@@ -60,13 +60,7 @@ const RecipeDetails = ({
               } 
               alt="Difficulty Icon" className="recipe-icon" />
               <h3>{difficulty}</h3>
-            </div>
-
-            {/* <div className="icon-container">
-              <img src="/icons/starEmpty.svg" alt="Rating Icon" className="recipe-icon" />
-              <h3>{roundedRating}</h3>
-            </div> */}
-            
+            </div>               
           </div>
             <div className="star-container">
               <StarRating rating={rating}/>

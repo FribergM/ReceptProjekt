@@ -23,6 +23,7 @@ export const sortCategories = (categories) => {
     return sortedCategories;
 }
 
+//Trello id:14
 export const calculateRecipeDifficulty = (time, ingredients, instructions) => {
     const numIngredients = ingredients.length;
     const numInstructions = instructions.length;

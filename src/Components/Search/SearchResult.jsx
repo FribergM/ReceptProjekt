@@ -16,7 +16,6 @@ function SearchResult({ recipes, query }) {
   const ingredientMatchRecipes = recipes.filter(recipe =>
     recipe.ingredients.some(ingredient => ingredient.name.toLowerCase().includes(lowcaseQuery))
   );
-  // const combinedMatchedRecipes = [...new Set([...nameMatchRecipes, ...ingredientMatchRecipes])];
 
   let filterRecipes;
   let resultMessage = "Tyvärr har vi inget matchande recept."; 
@@ -35,7 +34,7 @@ function SearchResult({ recipes, query }) {
     resultMessage = `Visar alla recept vars namn innehåller ${query}`;
   } else if (ingredientMatchRecipes.length > 0) {
     filterRecipes = ingredientMatchRecipes;
-    resultMessage = `Visar alla recept har ingredient ${query}`;
+    resultMessage = `Visar alla recept som har ingrediensen ${query}`;
   }
 
 

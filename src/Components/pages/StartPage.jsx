@@ -1,10 +1,9 @@
+//Trello id:6
 import React from "react";
-
 import NavBar from '../Navbar/Navbar';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import CategoryPreview from '../CategoryPreview/CategoryPreview';
-import './StartPage.css';
 
 function StartPage({recipes, categories}) {
     return(

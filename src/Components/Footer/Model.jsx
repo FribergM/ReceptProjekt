@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+//Trello id:13
+import React from "react";
 import './footer.css'; 
 
 const Modal = ({ type, onClose }) => {

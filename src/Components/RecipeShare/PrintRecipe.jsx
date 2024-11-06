@@ -1,3 +1,4 @@
+//Trello id:17
 import React from "react";
 import {FaPrint} from "react-icons/fa"
 import './PrintRecipe.css'

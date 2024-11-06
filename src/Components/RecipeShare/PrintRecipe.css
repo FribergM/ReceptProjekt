@@ -19,6 +19,7 @@
 .print_and_share {
     display:flex;
     justify-content: end;
+    padding: 0 2rem;
 }
 
 /*print-button for båda skrivut_icon och dela_icon*/

@@ -1,3 +1,4 @@
+//Trello id:10
 import React, { useState } from "react";
 import "./Rating.css";
 

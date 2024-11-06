@@ -35,25 +35,6 @@ function Category({categories}) {
         };
     },[])
 
-    const scrollLeft = () =>{
-        if(scrollRef.current) {
-            scrollRef.current.scrollBy({
-                left: -150,
-                behavior: "smooth",
-            });
-        }
-    }
-
-    const scrollRight = () => {
-        if(scrollRef.current) {
-            scrollRef.current.scrollBy({
-                left: 150,
-                behavior: "smooth",
-            });
-        }
-
-    }
-
     return (
         <>
             <div className="category-container">
@@ -77,10 +58,6 @@ function Category({categories}) {
                 ) : (
                     
                     <div className="category-menu">
-                        {/* <button className="scroll-button left" onClick={scrollLeft}>
-                            &lt;
-                        </button> */}
-
                         <div className="category-list" ref={scrollRef}>
                             {filteredCategories.map((category) => (
                                 <Link key={category.name} to={`/categories/${category.name}`} className="category-item">
@@ -88,10 +65,6 @@ function Category({categories}) {
                                 </Link>
                             ))}
                         </div>
-
-                        {/* <button className="scroll-button right" onClick={scrollRight}>
-                            &gt;
-                        </button> */}
                     </div>
                 )}
             </div>
