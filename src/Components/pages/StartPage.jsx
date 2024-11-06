@@ -1,3 +1,4 @@
+//Trello id:6
 import React from "react";
 import NavBar from '../Navbar/Navbar';
 import Header from '../Header/Header';

@@ -1,4 +1,4 @@
-
+//Trello id:18
 import React, { useState } from 'react';
 import{FaShareAlt, FaCopy} from 'react-icons/fa';
 import './RecipeShare.css';
