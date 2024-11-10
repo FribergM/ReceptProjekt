@@ -40,11 +40,11 @@ src/
   - RecipeDetails/
   - RecipeShare/
   - Search/
-- pages/ (Main pages of the application)
-  - StartPage.jsx
-  - CategoryPage.jsx
-  - SearchResultPage.jsx
-  - RecipesPage.jsx
+  - pages/ (Main pages of the application)
+    - StartPage.jsx
+    - CategoryPage.jsx
+    - SearchResultPage.jsx
+    - RecipesPage.jsx
 - api.js (API interaction functions)
 - util.js (Utility functions)
 - App.jsx (Main app component)
